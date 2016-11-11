@@ -13,6 +13,10 @@
 		"view_group"
       ]
     },
+	"oauth2Provider": {
+    	"authorizationUrl": "https://www.hipchat.com/users/authorize",
+    	"tokenUrl": "https://api.hipchat.com/v2/oauth/token"
+	},
 	"action": [
   		{
     		"key": "atb.action.sendkudo",
