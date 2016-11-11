@@ -14,12 +14,21 @@
     },
 	"action": [
   		{
-    		"key": "message.sendkudo",
+    		"key": "atb.action.sendkudo",
     		"name": {
-      			"value": "Send kudo"
+      			"value": "Send Kudo"
     		},
-    		"target": "dialog-key",
+    		"target": "atb.dialog.sendkudo",
     		"location": "hipchat.input.action"
+  		}
+	],
+	"dialog": [
+  		{
+    		"key": "atb.dialog.sendkudo",
+    		"title": {
+      			"value": "Send Kudo"
+    		},
+    		"url": "{{localBaseUrl}}/dialog"
   		}
 	]
   }
