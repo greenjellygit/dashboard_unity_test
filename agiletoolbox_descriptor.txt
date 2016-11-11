@@ -51,7 +51,7 @@
        			 	"height": "333px"
       			},
       			"hint": {
-        			"value": "Some hint motherfucker"
+        			"value": "Feel free to use hashtags"
       			},
       			"filter": {
         			"placeholder": {
