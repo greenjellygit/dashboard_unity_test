@@ -1,9 +1,9 @@
 {
   "name": "AgileToolbox Kudo",
   "description": "Integration for sending kudo cards from AgileToolbox.io via Hipchat",
-  "key": "com.example.myintegration",
+  "key": "pl.isolution.agiletoolbox.kudointegration",
   "links": {
-    "homepage": "https://example.com/myintegration",
+    "homepage": "https://agiletoolbox.io",
     "self": "https://example.com/myintegration/capabilities"
   },
   "capabilities": {
