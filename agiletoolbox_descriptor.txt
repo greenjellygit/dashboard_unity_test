@@ -19,7 +19,7 @@
       			"value": "Send kudo"
     		},
     		"target": "dialog-key",
-    		"location": "hipchat.message.action"
+    		"location": "hipchat.input.action"
   		}
 	]
   }
