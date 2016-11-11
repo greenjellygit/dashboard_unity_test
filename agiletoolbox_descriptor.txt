@@ -10,7 +10,7 @@
     "hipchatApiConsumer": {
       "scopes": [
         "send_notification",
-		"manage_rooms"
+		"view_group"
       ]
     },
 	"action": [
