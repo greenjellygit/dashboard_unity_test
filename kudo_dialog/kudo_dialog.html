@@ -1,6 +1,6 @@
 <html>
   <head>
-    <script src="https://www.hipchat.com/atlassian-connect/all-debug.js"></script>
+    <script src="https://www.hipchat.com/atlassian-connect/all.js"></script>
     <link rel="stylesheet" href="https://www.hipchat.com/atlassian-connect/all.css">
   </head>
   <body>
@@ -8,3 +8,8 @@
 	<input type="button" onclick="test()" value="Test"/>
   </body>
 </html>
+<script>
+	function test() {
+		HipChat.chat.appendMessage('test');
+	}
+</script>
