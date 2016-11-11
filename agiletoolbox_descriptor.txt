@@ -16,8 +16,8 @@
 	"installable": {
       "allowGlobal": true, 
       "allowRoom": true, 
-      "callbackUrl": "http://requestb.in/qqaemhqq",
-      "updateCallbackUrl": "http://requestb.in/qqaemhqq"
+      "callbackUrl": "http://mockbin.org/bin/51f89ae8-d634-451e-a28d-81e9367684b3",
+      "updateCallbackUrl": "http://mockbin.org/bin/51f89ae8-d634-451e-a28d-81e9367684b3"
     },
 	"oauth2Provider": {
     	"authorizationUrl": "https://www.hipchat.com/users/authorize",
