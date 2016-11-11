@@ -13,6 +13,12 @@
 		"view_group"
       ]
     },
+	"installable": {
+      "allowGlobal": true, 
+      "allowRoom": true, 
+      "callbackUrl": "http://requestb.in/qqaemhqq",
+      "updateCallbackUrl": "http://requestb.in/qqaemhqq"
+    },
 	"oauth2Provider": {
     	"authorizationUrl": "https://www.hipchat.com/users/authorize",
     	"tokenUrl": "https://api.hipchat.com/v2/oauth/token"
