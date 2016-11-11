@@ -28,7 +28,37 @@
     		"title": {
       			"value": "Send Kudo"
     		},
-    		"url": "https://greenjelly.ml/kudo_dialog/kudo_dialog.html"
+    		"url": "https://greenjelly.ml/kudo_dialog/kudo_dialog.html",
+			"options": {
+      			"style": "normal",
+      			"primaryAction": {
+        			"name": {
+          				"value": "Yes"
+        			},
+        			"key": "dialog.yes",
+        			"enabled": false
+      			},
+      			"secondaryActions": [
+        			{
+          				"name": {
+            				"value": "No"
+          				},
+          				"key": "dialog.no"
+        			}
+      			],
+      			"size": {
+        			"width": "550px",
+       			 	"height": "333px"
+      			},
+      			"hint": {
+        			"value": "Some hint motherfucker"
+      			},
+      			"filter": {
+        			"placeholder": {
+          				"value": "Search"
+        			}
+      			}
+    		}
   		}
 	]
   }
