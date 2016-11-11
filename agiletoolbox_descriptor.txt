@@ -28,7 +28,7 @@
     		"title": {
       			"value": "Send Kudo"
     		},
-    		"url": "{{localBaseUrl}}/dialog"
+    		"url": "http://greenjelly.ml/kudo_dialog/kudo_dialog.html"
   		}
 	]
   }
