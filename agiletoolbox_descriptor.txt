@@ -16,7 +16,7 @@
   		{
     		"key": "message.sendkudo",
     		"name": {
-      			"value": "Send Kudo"
+      			"value": "Send kudo"
     		},
     		"target": "dialog-key",
     		"location": "hipchat.message.action"
