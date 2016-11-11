@@ -11,6 +11,16 @@
       "scopes": [
         "send_notification"
       ]
-    }
+    },
+	"action": [
+  		{
+    		"key": "message.sendkudo",
+    		"name": {
+      			"value": "Send Kudo"
+    		},
+    		"target": "dialog-key",               --> This can be the key of a web panel, dialog or external page
+    		"location": "hipchat.message.action"  --> or hipchat.input.action
+  		}
+	]
   }
 }
