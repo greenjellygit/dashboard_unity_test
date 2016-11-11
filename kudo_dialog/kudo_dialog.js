@@ -6,7 +6,7 @@ function test() {
 
 function getToken() {
 	var req = new XMLHttpRequest();
-	req.xmlHttpReq.open("POST", "https://api.hipchat.com/v2/oauth/token", true);
+	req.open("POST", "https://api.hipchat.com/v2/oauth/token", true);
 	req.onreadystatechange = function () {
 		if (req.readyState == XMLHttpRequest.DONE) {
 			alert(req.responseText);
