@@ -18,6 +18,7 @@ input:focus {
 body {
 	background-color: #4AA3DF;
 	height: initial;
+	color: white;
 }
 
 .center {
@@ -57,4 +58,17 @@ button {
 	padding: 6px 12px;
 	color: white;
 	font-weight: bold;
+}
+
+button:hover {
+    background: #fff;
+    color: #df5531;
+    border: 1px solid #df5531;
+}
+
+.content {
+	display: inline-block;
+	width: 400px;
+	background-color: #2E688E;
+	padding: 20px;
 }
