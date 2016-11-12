@@ -16,8 +16,8 @@
 	"installable": {
       "allowGlobal": true, 
       "allowRoom": true, 
-      "callbackUrl": "http://localhost:8080/ATB/api/integration/hipchat/installed",
-      "uninstalledUrl": "http://localhost:8080/ATB/api/integration/hipchat/uninstalled"
+      "callbackUrl": "http://localhost:8080/ATB/api/integration/hipchat/register",
+      "uninstalledUrl": "http://localhost:8080/ATB/api/integration/hipchat/unregister"
     },
 	"configurable": {
     	"url": "https://greenjelly.ml/kudo_dialog/configuration.html"
