@@ -35,9 +35,8 @@
 				<input type="password" id="hipchatUserPassword" ng-model="addonCreditentials.pass" ng-minlength=5 ng-maxlength=50>
 			</div>
 			<div class="grid text-right">
-				<button>Sign In</button>
+				<button ng-click="authorize()">Sign In</button>
 			</div>
-			-{{oauthId}}-
 		</div>
 	</div>
   </div>
