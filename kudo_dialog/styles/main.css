@@ -26,7 +26,6 @@ body {
 }
 
 .grid {
-    display: table;
 	margin: 15px;
 }
 
@@ -37,4 +36,8 @@ label {
     color: #385a6d;
     font-weight: bold;
 	margin-bottom: 3px;
+}
+
+.text-centered {
+	text-align: center;
 }
