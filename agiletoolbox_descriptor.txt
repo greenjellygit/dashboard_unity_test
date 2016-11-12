@@ -21,7 +21,7 @@
     },
 	"configurable": {
     	"url": "https://greenjelly.ml/kudo_dialog/configuration.html"
-	}
+	},
 	"oauth2Provider": {
     	"authorizationUrl": "https://www.hipchat.com/users/authorize",
     	"tokenUrl": "https://api.hipchat.com/v2/oauth/token"
