@@ -1,4 +1,4 @@
 angular.module("kudoAddon", [])
 .controller("ConfigurationController", function($scope) {
-	$scop.test = "asd asd asd";
+	$scope.test = "asd asd asd";
 });
