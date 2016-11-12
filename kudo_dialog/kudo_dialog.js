@@ -5,7 +5,7 @@ function test() {
 }
 
 function showJWT() {
-	var token = findUrlParam("signed_request");
+	var token = atob(findUrlParam("signed_request"));
 	alert(token);
 }
 
