@@ -16,7 +16,7 @@ input:focus {
 }
 
 body {
-	background-color: #93c5d8;
+	background-color: #4AA3DF;
 	height: initial;
 }
 
@@ -34,11 +34,27 @@ label {
     display: block;
     text-align: left;
     width: 100%;
-    color: #385a6d;
+    color: white;
     font-weight: bold;
-	margin-bottom: 3px;
+	margin-bottom: 1px;
 }
 
 .text-centered {
 	text-align: center;
+}
+
+.text-right {
+	text-align: right;
+}
+
+button {
+	background: #ff6239;;
+    border: #ff6239;;
+	text-transform: uppercase;
+    letter-spacing: 1px;
+    outline: none;
+	cursor: pointer;
+	padding: 6px 12px;
+	color: white;
+	font-weight: bold;
 }

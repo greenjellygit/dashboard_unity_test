@@ -11,7 +11,8 @@
   </head>
   <body ng-app="kudoAddon">
   <div ng-controller="ConfigurationController">
-  <div class="text-centered grid">
+  
+  <div class="text-centered grid" style="margin-top: 40px;">
 	<img style="width: 300px" src="./images/logo.png"/>
   </div>
 	
@@ -23,6 +24,9 @@
 		<div class="grid">
 			<label>Password</label>
 			<input type="password" id="hipchatUserPassword" ng-model="hipchatUserPassword" ng-minlength=5 ng-maxlength=50>
+		</div>
+		<div class="grid text-right">
+			<button>Sign In</button>
 		</div>
 	</div>
   </div>
