@@ -12,26 +12,31 @@
   <body ng-app="kudoAddon">
   <div ng-controller="ConfigurationController">
   
-  <div class="text-centered grid" style="margin-top: 40px;">
+  <div class="text-centered grid" style="margin-top: 20px;">
 	<img style="width: 300px" src="./images/logo.png"/>
   </div>
-	<div class="text-centered">
-		<span class="grid content">
-		Please authorize with HipChat KudoAddon creditentials.<br/>
-		This will allow us identify your company.
-		</span>
-	</div>
-	<div class="center">
-		<div class="grid">
-			<label>Login</label>
-			<input type="text" id="hipchatUserPassword" ng-model="hipchatUserPassword" ng-minlength=5 ng-maxlength=50>
+  <div class="grid" style="width: 480px; margin: auto;">
+		<div class="text-centered">
+			<span class="grid content">
+			Please authorize with HipChat KudoAddon creditentials.<br/>
+			This will allow us identify your company.
+			</span>
 		</div>
-		<div class="grid">
-			<label>Password</label>
-			<input type="password" id="hipchatUserPassword" ng-model="hipchatUserPassword" ng-minlength=5 ng-maxlength=50>
+		<div class="center">
+			<div class="grid">
+				<label>Login</label>
+				<input type="text" id="hipchatUserPassword" ng-model="hipchatUserPassword" ng-minlength=5 ng-maxlength=50>
+			</div>
+			<div class="grid">
+				<label>Password</label>
+				<input type="password" id="hipchatUserPassword" ng-model="hipchatUserPassword" ng-minlength=5 ng-maxlength=50>
+			</div>
+			<div class="grid text-right">
+				<button>Sign In</button>
+			</div>
 		</div>
-		<div class="grid text-right">
-			<button>Sign In</button>
+		<div class="grid text-left">
+			<a href="http:/localhost:8080/ATB/#/profile//companyAdministration">AgileToolbox settings</a>
 		</div>
 	</div>
   </div>

@@ -48,6 +48,10 @@ label {
 	text-align: right;
 }
 
+.text-left {
+	text-align: left;
+}
+
 button {
 	background: #ff6239;;
     border: #ff6239;;
@@ -71,4 +75,10 @@ button:hover {
 	width: 400px;
 	background-color: #2E688E;
 	padding: 20px;
+}
+
+a {
+	color: #011ef7;
+    text-decoration: none;
+    font-weight: 400;
 }
