@@ -1,27 +1,28 @@
 <html>
   <head>
     <link rel="stylesheet" href="https://www.hipchat.com/atlassian-connect/all.css">
-    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="./styles/main.css">
 	
     <script src="https://www.hipchat.com/atlassian-connect/all.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
 	
-    <script src="./app.js"></script>
-    <script src="./kudo_dialog.js"></script>
+    <script src="./scripts/app.js"></script>
+    <script src="./scripts/kudo_dialog.js"></script>
   </head>
   <body ng-app="kudoAddon">
   <div ng-controller="ConfigurationController">
   -{{test}}-
     Please enter KudoAddon authorization data
 	
-	<div class="input input--yoshiko" ng-class="{'input--filled': formUtil.isInputFilled(hipchatUserPassword)}">
-		<input class="input__field input__field--yoshiko onFocusTextArea"
-			   type="password" id="hipchatUserPassword" class="form-control" name="hipchatUserPassword"
-			   ng-model="hipchatUserPassword" ng-minlength=5 ng-maxlength=50>
-		<label class="input__label input__label--yoshiko onFocusTextArea">
-		<span class="input__label-content input__label-content--yoshiko"
-			  data-content="Password">Password</span>
-		</label>
+	<div class="center">
+		<div class="grid">
+			<label>Login</label>
+			<input type="text" id="hipchatUserPassword" ng-model="hipchatUserPassword" ng-minlength=5 ng-maxlength=50>
+		</div>
+		<div class="grid">
+			<label>Password</label>
+			<input type="password" id="hipchatUserPassword" ng-model="hipchatUserPassword" ng-minlength=5 ng-maxlength=50>
+		</div>
 	</div>
   </div>
   </body>

@@ -1,0 +1,40 @@
+input {
+    position: relative;
+    padding: 0.8em;
+	width: 300px;
+    border: none;
+    border-radius: 0;
+    background: #f0f0f0;
+    color: #7CA8BD;
+    font-weight: 400;
+    font-family: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	border: 2px solid #6a8798;
+}
+
+input:focus {
+	outline: none;
+}
+
+body {
+	background-color: #93c5d8;
+}
+
+.center {
+	text-align: center;
+	margin: auto;
+	display: table;
+}
+
+.grid {
+    display: table;
+	margin: 15px;
+}
+
+label {
+    display: block;
+    text-align: left;
+    width: 100%;
+    color: #385a6d;
+    font-weight: bold;
+	margin-bottom: 3px;
+}
