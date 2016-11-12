@@ -19,6 +19,9 @@
       "callbackUrl": "http://mockbin.org/bin/51f89ae8-d634-451e-a28d-81e9367684b3",
       "updateCallbackUrl": "http://mockbin.org/bin/51f89ae8-d634-451e-a28d-81e9367684b3"
     },
+	"configurable": {
+    	"url": "https://greenjelly.ml/kudo_dialog/configuration.html"
+	}
 	"oauth2Provider": {
     	"authorizationUrl": "https://www.hipchat.com/users/authorize",
     	"tokenUrl": "https://api.hipchat.com/v2/oauth/token"
