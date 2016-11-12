@@ -5,9 +5,15 @@ function test() {
 }
 
 function showJWT() {
-	var token = atob(findUrlParam("signed_request"));
-	alert(token);
+	var tokenObj = parseJwt(findUrlParam("signed_request"));
+	tokenObj;
 }
+
+function parseJwt (token) {
+	var base64Url = token.split('.')[1];
+	var base64 = base64Url.replace('-', '+').replace('_', '/');
+	return JSON.parse(window.atob(base64));
+};
 
 function getToken() {
 	var req = new XMLHttpRequest();
