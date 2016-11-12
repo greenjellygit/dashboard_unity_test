@@ -11,6 +11,16 @@
   <div ng-controller="ConfigurationController">
   -{{test}}-
     Please enter KudoAddon authorization data
+	
+	<div class="input input--yoshiko" ng-class="{'input--filled': formUtil.isInputFilled(hipchatUserPassword)}">
+		<input class="input__field input__field--yoshiko onFocusTextArea"
+			   type="password" id="hipchatUserPassword" class="form-control" name="hipchatUserPassword"
+			   ng-model="hipchatUserPassword" ng-minlength=5 ng-maxlength=50>
+		<label class="input__label input__label--yoshiko onFocusTextArea">
+		<span class="input__label-content input__label-content--yoshiko"
+			  data-content="Password">Password</span>
+		</label>
+	</div>
   </div>
   </body>
 </html>
