@@ -1,7 +1,7 @@
 angular.module("kudoAddon", [])
 .run(function($rootScope) {
 	
-	$rootScope.oauthId = parseJwt(findUrlParam("signed_request"));
+	$rootScope.oauthId = parseJwt(findUrlParam("signed_request")).iss;
 	
 	function findUrlParam(name) {
 		var url = window.location;
