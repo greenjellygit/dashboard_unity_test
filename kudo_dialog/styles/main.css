@@ -17,6 +17,7 @@ input:focus {
 
 body {
 	background-color: #93c5d8;
+	height: initial;
 }
 
 .center {
