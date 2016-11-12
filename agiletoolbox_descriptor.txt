@@ -16,8 +16,8 @@
 	"installable": {
       "allowGlobal": true, 
       "allowRoom": true, 
-      "callbackUrl": "http://mockbin.org/bin/51f89ae8-d634-451e-a28d-81e9367684b3",
-      "updateCallbackUrl": "http://mockbin.org/bin/51f89ae8-d634-451e-a28d-81e9367684b3"
+      "callbackUrl": "http://localhost:8080/ATB/api/integration/hipchat/installed",
+      "uninstalledUrl": "http://localhost:8080/ATB/api/integration/hipchat/uninstalled"
     },
 	"configurable": {
     	"url": "https://greenjelly.ml/kudo_dialog/configuration.html"
