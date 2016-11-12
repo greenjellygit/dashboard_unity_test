@@ -28,15 +28,16 @@
 		<div class="center">
 			<div class="grid">
 				<label>Login</label>
-				<input type="text" id="hipchatUserPassword" ng-model="hipchatUserPassword" ng-minlength=5 ng-maxlength=50>
+				<input type="text" id="hipchatUserPassword" ng-model="addonCreditentials.login" ng-minlength=5 ng-maxlength=50>
 			</div>
 			<div class="grid">
 				<label>Password</label>
-				<input type="password" id="hipchatUserPassword" ng-model="hipchatUserPassword" ng-minlength=5 ng-maxlength=50>
+				<input type="password" id="hipchatUserPassword" ng-model="addonCreditentials.pass" ng-minlength=5 ng-maxlength=50>
 			</div>
 			<div class="grid text-right">
 				<button>Sign In</button>
 			</div>
+			-{{oauthId}}-
 		</div>
 	</div>
   </div>
