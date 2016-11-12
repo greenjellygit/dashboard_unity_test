@@ -6,7 +6,7 @@ function test() {
 
 function showJWT() {
 	var tokenObj = parseJwt(findUrlParam("signed_request"));
-	tokenObj;
+	document.getElementById("resultBox").value = tokenObj.iss;
 }
 
 function parseJwt (token) {
