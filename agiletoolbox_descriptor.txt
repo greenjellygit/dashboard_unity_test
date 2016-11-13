@@ -40,26 +40,18 @@
   		{
     		"key": "atb.dialog.sendkudo",
     		"title": {
-      			"value": "Send Kudo"
+      			"value": "Kudo creator"
     		},
     		"url": "https://greenjelly.ml/kudo_dialog/kudo_dialog.html",
 			"options": {
       			"style": "normal",
       			"primaryAction": {
         			"name": {
-          				"value": "Yes"
+          				"value": "Send"
         			},
         			"key": "dialog.yes",
         			"enabled": false
       			},
-      			"secondaryActions": [
-        			{
-          				"name": {
-            				"value": "No"
-          				},
-          				"key": "dialog.no"
-        			}
-      			],
       			"size": {
         			"width": "550px",
        			 	"height": "333px"
