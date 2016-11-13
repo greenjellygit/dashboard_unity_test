@@ -7,8 +7,8 @@
             <div class="listElement selectUserListAnim" id="user{{$index}}"
                  data-ng-repeat="user in $parent.filteredUsers = (usersData | userSelectListFilter:inputText:currentUserId | orderBy: ['lastName', 'firstName'])"
                  ng-class="{selectedUser: $index == selectedIndex}" ng-mousedown="select($index)">
-                <span class="col-lg-4 col-xs-4 selectUser-name">{{(user.firstName + " " + (user.lastName || ""))}}</span>
-                <span class="col-lg-6 col-xs-6 selectUser-email">({{user.login}})</span>
+                <div class="selectUser-name">{{(user.firstName + " " + (user.lastName || ""))}}</div>
+                <div class="selectUser-email">({{user.login}})</div>
             </div>
             <div ng-show="filteredUsers.length == 0" class="selectUserListAnim userSelect-emptyListElement">List is empty</div>
         </div>

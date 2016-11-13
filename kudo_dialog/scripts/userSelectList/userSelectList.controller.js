@@ -40,7 +40,7 @@ angular.module("kudoAddon")
         $scope.$apply($scope.selectedIndex);
 
         if(!angular.element("#user" + $scope.selectedIndex).is(":mcsInView")) {
-            $("#usersList").mCustomScrollbar("scrollTo", "#user" + ($scope.selectedIndex - 5), {scrollInertia: 0, timeout: 0});
+            $("#usersList").mCustomScrollbar("scrollTo", "#user" + ($scope.selectedIndex - 4), {scrollInertia: 0, timeout: 0});
         }
     }
 

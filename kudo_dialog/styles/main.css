@@ -21,6 +21,11 @@ body {
 	overflow: hidden;
 }
 
+.logo {
+	position: relative;
+    z-index: 1;
+}
+
 .center {
 	text-align: center;
 	margin: auto;
@@ -129,7 +134,7 @@ User select list
 
 .userSelectList {
 	position: relative;
-	width: 380px;
+	width: 240px;
 	
 	display: inline-block;
     float: right;
@@ -155,20 +160,17 @@ User select list
 }
 
 .selectUser-name {
-	margin-left: 5px;
     font-size: 13px;
-    color: #686868;
+    color: #777777;
     white-space: nowrap;
-    padding-top: 7px;
-    display: inline-table;
+    padding-top: 3px;
 }
 
 .selectUser-email {
-	color: #b8b8b8;
-	font-size: 12px;
-	margin-top: 7px;
-    float: right;
-	margin-right: 20px;
+    color: #b8b8b8;
+    text-align: left;
+    font-size: 12px;
+    margin-top: -2px;
 }
 
 .listElement:hover {
@@ -176,7 +178,7 @@ User select list
 }
 
 .listElement {
-	height: 30px;
+	height: 36px;
 	cursor: pointer;
 	box-shadow: 0px 1px 0px 0px #E6E6E6;
 	padding-left: 8px;
@@ -220,13 +222,13 @@ User select list
 }
 
 .selectUserListAnim.ng-enter-active {
-	height: 30px;
+	height: 36px;
 	opacity: 1;
 }
 
 .selectUserListAnim.ng-leave {
 	opacity: 1;
-	height: 30px;
+	height: 36px;
 	transition: 0.2s linear all;
 }
 

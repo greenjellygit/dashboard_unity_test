@@ -55,20 +55,20 @@ angular.module("kudoAddon", ["ngAnimate", "ngScrollbars"])
 	}
 })
 .controller("KudoDialogController", function($rootScope, $scope, ConfigurationService) {
-	$scope.users = [{id: 0, firstName: "0Krzysztof", lastName: "Antczak", login: "a.krzychu@gmail.com"}, 
-					{id: 1, firstName: "1Roman", lastName: "Bmowski", login: "romanum@romaon@onet.pl"}, 
-					{id: 2, firstName: "Przemysławek", lastName: "Regulczanowski", login: "Przemysławek.Regulczanowski@isolution.pl"}, 
-					{id: 3, firstName: "3Czesław", lastName: "Dozil", login: "czeslawmozil@isolution.pl"}, 
-					{id: 4, firstName: "4Czesław", lastName: "Eozil", login: "czeslawmozil@isolution.pl"}, 
-					{id: 5, firstName: "5Czesław", lastName: "Fozil", login: "czeslawmozil@isolution.pl"}, 
-					{id: 6, firstName: "6Czesław", lastName: "Gozil", login: "czeslawmozil@isolution.pl"}, 
-					{id: 7, firstName: "7Czesław", lastName: "Hozil", login: "czeslawmozil@isolution.pl"}, 
-					{id: 5, firstName: "8Czesław", lastName: "Iozil", login: "czeslawmozil@isolution.pl"}, 
-					{id: 6, firstName: "9Czesław", lastName: "Jozil", login: "czeslawmozil@isolution.pl"}, 
-					{id: 7, firstName: "10Czesław", lastName: "Kozil", login: "czeslawmozil@isolution.pl"}, 
-					{id: 5, firstName: "11Czesław", lastName: "Lozil", login: "czeslawmozil@isolution.pl"}, 
-					{id: 6, firstName: "12Czesław", lastName: "Mozil", login: "czeslawmozil@isolution.pl"}, 
-					{id: 7, firstName: "13Czesław", lastName: "Nozil", login: "czeslawmozil@isolution.pl"}];
+	$scope.users = [{id: 0, firstName: "Krzysztof", lastName: "Antczak", login: "a.krzychu@gmail.com"}, 
+					{id: 1, firstName: "Roman", lastName: "Bmowski", login: "romanum@romaon@onet.pl"}, 
+					{id: 2, firstName: "Pzemysławek", lastName: "Regulczanowski", login: "Przemysławek.Regulczanowski@isolution.pl"}, 
+					{id: 3, firstName: "Czesław", lastName: "Dozil", login: "czeslawmozil@isolution.pl"}, 
+					{id: 4, firstName: "Lucjan", lastName: "Eozil", login: "czeslawmozil@isolution.pl"}, 
+					{id: 5, firstName: "Katarzyna", lastName: "Fozil", login: "czeslawmozil@isolution.pl"}, 
+					{id: 6, firstName: "Gagatek", lastName: "Gozil", login: "czeslawmozil@isolution.pl"}, 
+					{id: 7, firstName: "Paruweczka", lastName: "Hozil", login: "czeslawmozil@isolution.pl"}, 
+					{id: 5, firstName: "Rosłymurz", lastName: "Iozil", login: "czeslawmozil@isolution.pl"}, 
+					{id: 6, firstName: "Berbelek", lastName: "Jozil", login: "czeslawmozil@isolution.pl"}, 
+					{id: 7, firstName: "Lucjanka", lastName: "Kozil", login: "czeslawmozil@isolution.pl"}, 
+					{id: 5, firstName: "Ludwiczka", lastName: "Lozil", login: "czeslawmozil@isolution.pl"}, 
+					{id: 6, firstName: "Henryka", lastName: "Mozil", login: "czeslawmozil@isolution.pl"}, 
+					{id: 7, firstName: "Kaśka", lastName: "Nozil", login: "czeslawmozil@isolution.pl"}];
 	
 	$scope.selectedUser = {};
 })
