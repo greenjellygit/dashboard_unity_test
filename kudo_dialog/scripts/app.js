@@ -1,7 +1,9 @@
 angular.module("kudoAddon", [])
-.run(function($rootScope) {
+.run(function($rootScope, ConfigurationService) {
 	
-	$rootScope.oauthId = parseJwt(findUrlParam("signed_request")).iss;
+	//$rootScope.oauthId = parseJwt(findUrlParam("signed_request")).iss;
+	$rootScope.oauthId = "4ea64aa4-b1da-4678-a872-f982af9b3a31";
+	ConfigurationService.isAuthorized();
 	
 	function findUrlParam(name) {
 		var url = window.location;
@@ -30,18 +32,34 @@ angular.module("kudoAddon", [])
 .factory("ConfigurationService", function($rootScope, $http) {
 	return {
 		authorize: function(creditentials) {
-			return $http({
-				method: "GET",
-				url: contexPath + "/authorizeCompany",
-				params: "login=" + creditentials.login + ", pass=" + creditentials.pass,
-				headers: {'OAuthId': $rootScope.oauthId}
+			creditentials.oauthId = $rootScope.oauthId;
+			return $http.post(contexPath + '/authorizeCompany', encodeQueryData(creditentials), {
+				headers: {
+					"Content-Type": "application/x-www-form-urlencoded",
+					"Accept": "application/x-www-form-urlencoded"
+				}
 			}).success(function(data){
-				return data;
+				isAuthorized();
 			}).error(function(){
 				//well... fuck
+			});
+		},
+		isAuthorized: function() {
+			$http.get(contexPath + "/isInstallationAuthorized/" + $rootScope.oauthId)
+			.then(function(data){
+				$rootScope.isAuthorized = true;
+			}).catch(function(){
+				$rootScope.isAuthorized = false;
 			});
 		}
 	}
 });
 
 var contexPath = "http://localhost:8080/ATB/api/integration/hipchat";
+
+function encodeQueryData(data) {
+   let ret = [];
+   for (let d in data)
+     ret.push(encodeURIComponent(d) + '=' + encodeURIComponent(data[d]));
+   return ret.join('&');
+}
