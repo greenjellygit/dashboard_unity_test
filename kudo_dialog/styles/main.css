@@ -122,3 +122,112 @@ a {
 	margin-top: 80px;
 	width: 80px;
 }
+
+/* ===========================================================================
+User select list
+============================================================================= */
+.userSelectList {
+	position: relative;
+	width: 400px;
+}
+
+.userSelectListLabel {
+	height: 20px;
+}
+
+.selectedUser {
+	background-color: #F1F1F1;
+}
+
+.selectUserPhoto {
+	border-radius: 100%;
+	height: 44px;
+	width: 44px;
+	margin-top: 3px;
+	margin-left: 6px;
+	padding-right: 0;
+	padding-left: 0;
+}
+
+.selectUser-name {
+	margin-left: 5px;
+	color: #686868;
+	white-space: nowrap;
+	padding-top: 5px;
+	display: inline-table;
+}
+
+.selectUser-email {
+	color: #b8b8b8;
+	font-size: 12px;
+	margin-top: 7px;
+    float: right;
+	margin-right: 40px;
+}
+
+.listElement:hover {
+	background-color: #e7e7e7;
+}
+
+.listElement {
+	height: 30px;
+	cursor: pointer;
+	box-shadow: 0px 1px 0px 0px #E6E6E6;
+	padding-left: 15px;
+}
+
+.usersList {
+	background-color: #ffffff;
+	max-height: 301px;
+	border: 2px solid #d0d1d0;
+	border-top: none;
+}
+
+.toogleBtn {
+    height: 31px;
+    width: 33px;
+    padding: 0;
+    right: 0;
+    position: absolute;
+    margin-top: -33px;
+}
+
+.usersListContainer {
+	position: absolute;
+	width: 100%;
+	overflow: hidden;
+	z-index: 2;
+	text-align: left;
+}
+
+.selectUserListAnim {
+	overflow: hidden;
+	position: relative;
+	opacity: 1;
+}
+
+.selectUserListAnim.ng-enter {
+	height: 0px;
+	opacity: 0;
+	transition: 0.2s linear all;
+}
+
+.selectUserListAnim.ng-enter-active {
+	height: 30px;
+	opacity: 1;
+}
+
+.selectUserListAnim.ng-leave {
+	opacity: 1;
+	height: 30px;
+	transition: 0.2s linear all;
+}
+
+.selectUserListAnim.ng-leave-active {
+	height: 0px;
+	opacity: 0;
+}
+
+.mCSB_inside>.mCSB_container {
+    margin-right: 0;
+}

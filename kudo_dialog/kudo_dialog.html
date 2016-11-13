@@ -1,72 +1,37 @@
 <html>
 <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link rel="stylesheet" href="https://www.hipchat.com/atlassian-connect/all.css">
+    <link rel="stylesheet" href="./scripts/ng-scrollbars/jquery.mCustomScrollbar.min.css">
     <link rel="stylesheet" href="./styles/main.css">
 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://www.hipchat.com/atlassian-connect/all.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-animate.js"></script>
 
+    <script src="./scripts/ng-scrollbars/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="./scripts/ng-scrollbars/scrollbars.min.js"></script>
+	
     <script src="./scripts/app.js"></script>
     <script src="./scripts/kudo_dialog.js"></script>
+    <script src="./scripts/userSelectList/userSelectList.controller.js"></script>
+    <script src="./scripts/userSelectList/userSelectList.directive.js"></script>
+    <script src="./scripts/userSelectList/userSelectList.filter.js"></script>
 </head>
 <body ng-app="kudoAddon">
-<div ng-controller="ConfigurationController">
+<div ng-controller="KudoDialogController">
 
-    <div class="text-centered grid" style="margin-top: 20px;">
-        <img style="width: 300px" src="./images/logo.png"/>
+    <div class="text-left grid" style="margin-top: 20px;">
+        <img style="width: 170px" src="./images/logo.png"/>
     </div>
     <div>
         <div class="spinnerContainer" ng-show="isLoading"><img class="spinner" src="./images/spinner.svg"/></div>
-        <div ng-hide="isAuthorized" class="grid" style="width: 470px; margin: auto;">
-            <div class="text-centered">
-			<span class="grid content">
-			Please authorize with HipChat KudoAddon creditentials.<br/>
-			This will allow us identify your company.
-			</span>
-                <div class="text-right">
-                    <a href="https://atb.isolution.pl/#/profile//companyAdministration" target="_blank">AgileToolbox
-                        settings</a>
-                </div>
-            </div>
-            <form class="center" name="authorizeForm">
-                <div class="grid" style="margin-bottom: 0px;">
-                    <label>Login</label>
-                    <input type="text" name="login" ng-model="addonCreditentials.login" ng-minlength=5 ng-maxlength=50 autocomplete="off"
-                           required>
-                    <div class="errorField">
-                        <div ng-show="!authorizeForm.login.$valid && authorizeForm.login.$touched">
-                            Login must have at least 5 characters
-                        </div>
-                    </div>
-                </div>
-                <div class="grid" style="margin-top: 0px; margin-bottom: 0px;">
-                    <label>Password</label>
-                    <input type="password" name="password" ng-model="addonCreditentials.pass" ng-minlength=5 ng-maxlength=50 required>
-                    <div class="errorField">
-                        <div ng-show="!authorizeForm.password.$valid && authorizeForm.password.$touched">
-                            Password must have at least 5 characters
-                        </div>
-                    </div>
-                </div>
-                <div class="grid text-right" style="margin-top: 10px;">
-                    <button ng-click="authorize()" ng-disabled="authorizeForm.$invalid">Sign In</button>
-                </div>
-                <div class="grid errorField">
-                    <div ng-show="isCreditentialsIncorrect">Login or password are incorrect</div>
-                </div>
-            </form>
-        </div>
-        <div ng-show="isAuthorized" class="grid" style="width: 470px; margin: auto;">
-            <div class="text-centered">
-		<span class="grid content">
-		We are glad that you are using our plugin.<br/>
-		To reset the authorization data - press the button below.
-		</span>
-            </div>
+        <div class="grid" style="width: 470px; margin: auto;">
             <div class="center">
-                <div class="grid text-right">
-                    <button ng-click="deauthorize()">Reset</button>
+                <div class="grid">
+                   <user-select-list users-data="users" selected-user="selectedUser" placeholder-text="Please select user" label-text="To user"></user-select-list>
+				   {{selectedUser}}
                 </div>
             </div>
         </div>

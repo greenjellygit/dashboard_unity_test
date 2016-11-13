@@ -1,4 +1,4 @@
-angular.module("kudoAddon", ["ngAnimate"])
+angular.module("kudoAddon", ["ngAnimate", "ngScrollbars"])
 .run(function($rootScope, ConfigurationService) {
 	
 	//$rootScope.oauthId = parseJwt(findUrlParam("signed_request")).iss;
@@ -21,6 +21,20 @@ angular.module("kudoAddon", ["ngAnimate"])
 		return JSON.parse(window.atob(base64));
 	}
 })
+.config(function(ScrollBarsProvider) {	
+	ScrollBarsProvider.defaults = {
+            autoHideScrollbar: false,
+            theme: 'rounded-dark',
+            advanced:{
+                updateOnContentResize: true
+            },
+            scrollButtons: {
+                scrollAmount: 'auto',
+                enable: true
+            },
+            axis: 'y'
+        };
+})
 .controller("ConfigurationController", function($rootScope, $scope, ConfigurationService) {
 	$scope.addonCreditentials = {login: "", pass: ""}
 	$scope.isCreditentialsIncorrect = false;
@@ -38,6 +52,24 @@ angular.module("kudoAddon", ["ngAnimate"])
 	$scope.deauthorize = function() {
 		ConfigurationService.deauthorize();
 	}
+})
+.controller("KudoDialogController", function($rootScope, $scope, ConfigurationService) {
+	$scope.users = [{id: 0, firstName: "Krzysztof", lastName: "Antczak", login: "a.krzychu@gmail.com"}, 
+					{id: 1, firstName: "Roman", lastName: "Dmowski", login: "romanum@romaon@onet.pl"}, 
+					{id: 2, firstName: "Czesław", lastName: "Mozil", login: "czeslawmozil@isolution.pl"}, 
+					{id: 3, firstName: "1Czesław", lastName: "Mozil", login: "czeslawmozil@isolution.pl"}, 
+					{id: 4, firstName: "2Czesław", lastName: "Mozil", login: "czeslawmozil@isolution.pl"}, 
+					{id: 5, firstName: "3Czesław", lastName: "Mozil", login: "czeslawmozil@isolution.pl"}, 
+					{id: 6, firstName: "4Czesław", lastName: "Mozil", login: "czeslawmozil@isolution.pl"}, 
+					{id: 7, firstName: "5Czesław", lastName: "Mozil", login: "czeslawmozil@isolution.pl"}, 
+					{id: 5, firstName: "3Czesław", lastName: "Mozil", login: "czeslawmozil@isolution.pl"}, 
+					{id: 6, firstName: "4Czesław", lastName: "Mozil", login: "czeslawmozil@isolution.pl"}, 
+					{id: 7, firstName: "5Czesław", lastName: "Mozil", login: "czeslawmozil@isolution.pl"}, 
+					{id: 5, firstName: "3Czesław", lastName: "Mozil", login: "czeslawmozil@isolution.pl"}, 
+					{id: 6, firstName: "4Czesław", lastName: "Mozil", login: "czeslawmozil@isolution.pl"}, 
+					{id: 7, firstName: "5Czesław", lastName: "Mozil", login: "czeslawmozil@isolution.pl"}];
+	
+	$scope.selectedUser = {};
 })
 .factory("ConfigurationService", function($rootScope, $http, LoadingSpinnerService) {
 	return {
