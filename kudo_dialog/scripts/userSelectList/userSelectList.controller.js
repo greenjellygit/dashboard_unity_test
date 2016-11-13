@@ -40,7 +40,7 @@ angular.module("kudoAddon")
         $scope.$apply($scope.selectedIndex);
 
         if(!angular.element("#user" + $scope.selectedIndex).is(":mcsInView")) {
-            $("#usersList").mCustomScrollbar("scrollTo", "#user" + ($scope.selectedIndex - 9), {scrollInertia: 0, timeout: 0});
+            $("#usersList").mCustomScrollbar("scrollTo", "#user" + ($scope.selectedIndex - 5), {scrollInertia: 0, timeout: 0});
         }
     }
 
@@ -80,7 +80,7 @@ angular.module("kudoAddon")
 
     $scope.hideList = function(event) {
         if((event.relatedTarget && event.relatedTarget.id != "toogleBtn") || !event.relatedTarget) {
-            $scope.isListVisible = false;
+           // $scope.isListVisible = false;
         }
     }
 
@@ -88,7 +88,7 @@ angular.module("kudoAddon")
         if(!$scope.isListVisible) {
             $scope.searchInputElement.focus();
         } else {
-           $scope.isListVisible = false;
+          // $scope.isListVisible = false;
         }
     }
 
