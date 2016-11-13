@@ -3,7 +3,6 @@ angular.module("kudoAddon", ["ngAnimate", "ngScrollbars"])
 	
 	//$rootScope.oauthId = parseJwt(findUrlParam("signed_request")).iss;
 	$rootScope.oauthId = "4ea64aa4-b1da-4678-a872-f982af9b3a31";
-	alert($rootScope.oauthId);
 	$rootScope.isLoading = false;
 	$rootScope.isAuthorized = false;
 	ConfigurationService.isAuthorized();

@@ -2,35 +2,21 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link rel="stylesheet" href="https://www.hipchat.com/atlassian-connect/all.css">
-    <link rel="stylesheet" href="./scripts/ng-scrollbars/jquery.mCustomScrollbar.min.css">
-    <link rel="stylesheet" href="./styles/main.css">
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://www.hipchat.com/atlassian-connect/all.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-animate.js"></script>
-
-    <script src="./scripts/ng-scrollbars/jquery.mCustomScrollbar.concat.min.js"></script>
-    <script src="./scripts/ng-scrollbars/scrollbars.min.js"></script>
 	
-    <script src="./scripts/app.js"></script>
-    <script src="./scripts/kudo_dialog.js"></script>
-    <script src="./scripts/userSelectList/userSelectList.controller.js"></script>
-    <script src="./scripts/userSelectList/userSelectList.directive.js"></script>
-    <script src="./scripts/userSelectList/userSelectList.filter.js"></script>
+    <script src="./scripts/app2.js"></script>
 </head>
 <body ng-app="kudoAddon">
-<div ng-controller="KudoDialogController">
+<div ng-controller="ConfigurationController">
 
     <div class="text-left grid" style="margin-top: 10px;">
         <img style="width: 170px" class="logo" src="./images/logo.png"/>
-	    <user-select-list users-data="users" selected-user="selectedUser" placeholder-text="Please select user" label-text="To user"></user-select-list>
     </div>
     <div>
         <div class="grid" style="width: 470px; margin: auto;">
             <div class="center">
                 <div class="grid">
-				   {{selectedUser}}
+				   -{{asd}}-
                 </div>
             </div>
         </div>
