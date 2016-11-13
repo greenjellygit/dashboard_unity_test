@@ -1,8 +1,9 @@
-angular.module("kudoAddon", [])
+angular.module("kudoAddon", ["ngAnimate"])
 .run(function($rootScope, ConfigurationService) {
 	
 	//$rootScope.oauthId = parseJwt(findUrlParam("signed_request")).iss;
 	$rootScope.oauthId = "4ea64aa4-b1da-4678-a872-f982af9b3a31";
+	$rootScope.isLoading = false;
 	ConfigurationService.isAuthorized();
 	
 	function findUrlParam(name) {
@@ -22,14 +23,23 @@ angular.module("kudoAddon", [])
 })
 .controller("ConfigurationController", function($rootScope, $scope, ConfigurationService) {
 	$scope.addonCreditentials = {login: "", pass: ""}
+	$scope.isCreditentialsIncorrect = false;
 	
 	$scope.authorize = function() {
-		ConfigurationService.authorize($scope.addonCreditentials).then(function() {
-			alert("success");
-		});
-	} 
+		ConfigurationService.authorize($scope.addonCreditentials)
+			.success(function() {
+				$scope.isCreditentialsIncorrect = false;
+				ConfigurationService.isAuthorized();
+			}).error(function() {
+				$scope.isCreditentialsIncorrect = true;
+			});
+	}
+
+	$scope.deauthorize = function() {
+		ConfigurationService.deauthorize();
+	}
 })
-.factory("ConfigurationService", function($rootScope, $http) {
+.factory("ConfigurationService", function($rootScope, $http, LoadingSpinnerService) {
 	return {
 		authorize: function(creditentials) {
 			creditentials.oauthId = $rootScope.oauthId;
@@ -38,19 +48,48 @@ angular.module("kudoAddon", [])
 					"Content-Type": "application/x-www-form-urlencoded",
 					"Accept": "application/x-www-form-urlencoded"
 				}
-			}).success(function(data){
-				isAuthorized();
-			}).error(function(){
-				//well... fuck
 			});
 		},
+		deauthorize: function() {
+			return $http.get(contexPath + "/deauthorizeCompany/" + $rootScope.oauthId)
+				.success(function(data){
+					$rootScope.isAuthorized = false;
+				}).error(function(){
+					$rootScope.isAuthorized = true;
+				});
+		},
 		isAuthorized: function() {
+			LoadingSpinnerService.startLoading();
 			$http.get(contexPath + "/isInstallationAuthorized/" + $rootScope.oauthId)
 			.success(function(data){
-				$rootScope.isAuthorized = true;
-			}).error(function(){
-				$rootScope.isAuthorized = false;
+				$rootScope.isAuthorized = data;
+				LoadingSpinnerService.finishLoading();
+			}).error(function() {
+				LoadingSpinnerService.finishLoading();
 			});
+		}
+	}
+}).factory("LoadingSpinnerService", function($rootScope, $timeout) {
+	var isLoadingInProggres = false;
+
+	var processLoading = function() {
+		$rootScope.isLoading = true;
+		$timeout(function () {
+			if(isLoadingInProggres) {
+				processLoading();
+			} else {
+				$rootScope.isLoading = false;
+			}
+		}, 2000);
+	}
+
+	return {
+		startLoading: function() {
+			isLoadingInProggres = true;
+			processLoading();
+		},
+		finishLoading: function() {
+			isLoadingInProggres = false;
 		}
 	}
 });
