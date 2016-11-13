@@ -46,9 +46,9 @@ angular.module("kudoAddon", [])
 		},
 		isAuthorized: function() {
 			$http.get(contexPath + "/isInstallationAuthorized/" + $rootScope.oauthId)
-			.then(function(data){
+			.success(function(data){
 				$rootScope.isAuthorized = true;
-			}).catch(function(){
+			}).error(function(){
 				$rootScope.isAuthorized = false;
 			});
 		}
