@@ -1,11 +1,11 @@
-angular.module("kudoAddon", ["ngAnimate", "ngScrollbars"])
+angular.module("kudoAddon", /*["ngAnimate", "ngScrollbars"]*/[])
 .run(function($rootScope, ConfigurationService) {
 	
 	//$rootScope.oauthId = parseJwt(findUrlParam("signed_request")).iss;
 	$rootScope.oauthId = "4ea64aa4-b1da-4678-a872-f982af9b3a31";
-	$rootScope.isLoading = false;
-	$rootScope.isAuthorized = false;
-	ConfigurationService.isAuthorized();
+	//$rootScope.isLoading = false;
+	//$rootScope.isAuthorized = false;
+	//ConfigurationService.isAuthorized();
 	
 	function findUrlParam(name) {
 		var url = window.location;
@@ -21,7 +21,7 @@ angular.module("kudoAddon", ["ngAnimate", "ngScrollbars"])
 		var base64 = base64Url.replace('-', '+').replace('_', '/');
 		return JSON.parse(window.atob(base64));
 	}
-})
+});/*
 .config(function(ScrollBarsProvider) {	
 	ScrollBarsProvider.defaults = {
             autoHideScrollbar: false,
@@ -135,4 +135,4 @@ function encodeQueryData(data) {
    for (let d in data)
      ret.push(encodeURIComponent(d) + '=' + encodeURIComponent(data[d]));
    return ret.join('&');
-}
+}*/
