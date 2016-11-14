@@ -95,9 +95,9 @@ angular.module("kudoAddon", ["ngAnimate", "ngScrollbars"])
 		isAuthorized: function() {
 			LoadingSpinnerService.startLoading();
 				alert(123);
-			$http.get(contexPath + "/isInstallationAuthorized/" + $rootScope.oauthId)
+			$http.get("http://mockbin.org/bin/fb40692c-69ce-4072-9e03-5e6991d00172")
 			.success(function(data){
-				alert(123);
+				alert(data);
 				$rootScope.isAuthorized = data;
 			}).finally(function() {
 				LoadingSpinnerService.finishLoading();
