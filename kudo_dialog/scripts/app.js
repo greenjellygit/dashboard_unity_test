@@ -103,7 +103,7 @@ angular.module("kudoAddon", /*["ngAnimate", "ngScrollbars"]*/[])
 			});
 		}
 	}
-});*/.factory("LoadingSpinnerService", function($rootScope, $timeout) {
+});.factory("LoadingSpinnerService", function($rootScope, $timeout) {
 	var isLoadingInProggres = false;
 
 	var processLoading = function() {
@@ -126,7 +126,7 @@ angular.module("kudoAddon", /*["ngAnimate", "ngScrollbars"]*/[])
 			isLoadingInProggres = false;
 		}
 	}
-});
+});*/
 
 var contexPath = "http://localhost:8080/ATB/api/integration/hipchat";
 
