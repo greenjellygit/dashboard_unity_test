@@ -72,7 +72,7 @@ angular.module("kudoAddon", /*["ngAnimate", "ngScrollbars"]*/[])
 					{id: 7, firstName: "Kaśka", lastName: "Nozil", login: "czeslawmozil@isolution.pl"}];
 	
 	$scope.selectedUser = {};
-})/*
+});/*
 .factory("ConfigurationService", function($rootScope, $http, LoadingSpinnerService) {
 	return {
 		authorize: function(creditentials) {
@@ -103,7 +103,7 @@ angular.module("kudoAddon", /*["ngAnimate", "ngScrollbars"]*/[])
 			});
 		}
 	}
-});.factory("LoadingSpinnerService", function($rootScope, $timeout) {
+}).factory("LoadingSpinnerService", function($rootScope, $timeout) {
 	var isLoadingInProggres = false;
 
 	var processLoading = function() {
@@ -126,7 +126,7 @@ angular.module("kudoAddon", /*["ngAnimate", "ngScrollbars"]*/[])
 			isLoadingInProggres = false;
 		}
 	}
-});*/
+});
 
 var contexPath = "http://localhost:8080/ATB/api/integration/hipchat";
 
@@ -135,4 +135,4 @@ function encodeQueryData(data) {
    for (let d in data)
      ret.push(encodeURIComponent(d) + '=' + encodeURIComponent(data[d]));
    return ret.join('&');
-}
+}*/
