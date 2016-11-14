@@ -127,6 +127,7 @@ angular.module("kudoAddon", /*["ngAnimate", "ngScrollbars"]*/[])
 		}
 	}
 });
+*/
 
 var contexPath = "http://localhost:8080/ATB/api/integration/hipchat";
 
@@ -135,4 +136,4 @@ function encodeQueryData(data) {
    for (let d in data)
      ret.push(encodeURIComponent(d) + '=' + encodeURIComponent(data[d]));
    return ret.join('&');
-}*/
+}
