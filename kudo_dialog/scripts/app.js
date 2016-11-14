@@ -54,7 +54,7 @@ angular.module("kudoAddon", /*["ngAnimate", "ngScrollbars"]*/[])
 		ConfigurationService.deauthorize();
 	}
 })*/
-.controller("KudoDialogController", function($rootScope, $scope, ConfigurationService) {
+.controller("KudoDialogController", function($rootScope, $scope/*, ConfigurationService*/) {
 	$scope.test = "asd";
 	$scope.users = [{id: 0, firstName: "Krzysztof", lastName: "Antczak", login: "a.krzychu@gmail.com"}, 
 					{id: 1, firstName: "Roman", lastName: "Bmowski", login: "romanum@romaon@onet.pl"}, 
