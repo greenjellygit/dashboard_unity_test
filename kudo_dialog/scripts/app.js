@@ -54,7 +54,7 @@ angular.module("kudoAddon", ["ngAnimate", "ngScrollbars"])
 		ConfigurationService.deauthorize();
 	}
 })
-.controller("KudoDialogController", function($rootScope, $scope/*, ConfigurationService*/) {
+.controller("KudoDialogController", function($rootScope, $scope) {
 	$scope.test = "asd";
 	$scope.users = [{id: 0, firstName: "Krzysztof", lastName: "Antczak", login: "a.krzychu@gmail.com"}, 
 					{id: 1, firstName: "Roman", lastName: "Bmowski", login: "romanum@romaon@onet.pl"}, 
@@ -94,10 +94,8 @@ angular.module("kudoAddon", ["ngAnimate", "ngScrollbars"])
 		},
 		isAuthorized: function() {
 			LoadingSpinnerService.startLoading();
-				alert(123);
-			$http.get("https://mockbin.org/bin/fb40692c-69ce-4072-9e03-5e6991d00172")
+			$http.get(contexPath + "/isInstallationAuthorized/" + $rootScope.oauthId)
 			.success(function(data){
-				alert(data);
 				$rootScope.isAuthorized = data;
 			}).finally(function() {
 				LoadingSpinnerService.finishLoading();
@@ -121,7 +119,7 @@ angular.module("kudoAddon", ["ngAnimate", "ngScrollbars"])
 	return {
 		startLoading: function() {
 			isLoadingInProggres = true;
-			processLoading();
+			//processLoading();
 		},
 		finishLoading: function() {
 			isLoadingInProggres = false;
