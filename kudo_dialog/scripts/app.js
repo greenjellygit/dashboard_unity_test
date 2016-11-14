@@ -21,7 +21,7 @@ angular.module("kudoAddon", /*["ngAnimate", "ngScrollbars"]*/[])
 		var base64 = base64Url.replace('-', '+').replace('_', '/');
 		return JSON.parse(window.atob(base64));
 	}
-});/*
+})/*
 .config(function(ScrollBarsProvider) {	
 	ScrollBarsProvider.defaults = {
             autoHideScrollbar: false,
@@ -53,7 +53,7 @@ angular.module("kudoAddon", /*["ngAnimate", "ngScrollbars"]*/[])
 	$scope.deauthorize = function() {
 		ConfigurationService.deauthorize();
 	}
-})
+})*/
 .controller("KudoDialogController", function($rootScope, $scope, ConfigurationService) {
 	$scope.test = "asd";
 	$scope.users = [{id: 0, firstName: "Krzysztof", lastName: "Antczak", login: "a.krzychu@gmail.com"}, 
@@ -72,7 +72,7 @@ angular.module("kudoAddon", /*["ngAnimate", "ngScrollbars"]*/[])
 					{id: 7, firstName: "Kaśka", lastName: "Nozil", login: "czeslawmozil@isolution.pl"}];
 	
 	$scope.selectedUser = {};
-})
+});/*
 .factory("ConfigurationService", function($rootScope, $http, LoadingSpinnerService) {
 	return {
 		authorize: function(creditentials) {
