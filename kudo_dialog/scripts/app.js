@@ -1,5 +1,5 @@
 angular.module("kudoAddon", /*["ngAnimate", "ngScrollbars"]*/[])
-.run(function($rootScope, ConfigurationService) {
+.run(function($rootScope/*, ConfigurationService*/) {
 	
 	//$rootScope.oauthId = parseJwt(findUrlParam("signed_request")).iss;
 	$rootScope.oauthId = "4ea64aa4-b1da-4678-a872-f982af9b3a31";
