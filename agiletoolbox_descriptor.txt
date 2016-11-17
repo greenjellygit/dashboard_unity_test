@@ -55,7 +55,7 @@
 				"secondaryActions": [],
       			"size": {
         			"width": "650px",
-       			 	"height": "530px"
+       			 	"height": "600px"
       			},
       			"hint": {
         			"value": "Feel free to use hashtags"
