@@ -1,5 +1,4 @@
 <div class="userSelectList">
-    <label class="userSelectListLabel">{{labelText}}</label>
     <input style="font-size: small; height: 35px; width: 100%" ng-focus="showList($event)" ng-change="selectedIndex = 0" ng-blur="hideList($event)" ng-model="inputText" id="searchInput" placeholder={{placeholderText}} autocomplete="off"/>
     <button id="toogleBtn" tabIndex="-1" class="toogleBtn" ng-click="toogleShowHideList($event)">▼</button>
     <div class="usersListContainer showHide" ng-if="isListVisible">
