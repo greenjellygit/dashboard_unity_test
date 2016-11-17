@@ -28,7 +28,13 @@
 <div ng-controller="KudoDialogController">
 
     <div class="text-left grid" style="margin-top: 10px; margin-bottom: -15px;">
-		<span class="kudoModalCheckboxText" ng-click="cardToSend.anonymous = !cardToSend.anonymous">Anonymouse</span>
+		<span class="kudoModalCheckbox">
+			<span class="checkboxLike" ng-init="cardToSend.anonymous = false" ng-click="cardToSend.anonymous = !cardToSend.anonymous"
+				  ng-class="{'checked' : cardToSend.anonymous}" ng-mouseup="loosefocus($event)"
+				  ng-click="cardToSend.anonymous != cardToSend.anonymous">
+			</span>
+			<span class="kudoModalCheckboxText" ng-click="cardToSend.anonymous = !cardToSend.anonymous">Anonymouse</span>
+		</span>
         <user-select-list users-data="users" is-remove-current-user="true" current-user-id="currentUserId" selected-user="selectedUser" placeholder-text="Please select user" label-text="To user"></user-select-list>
     </div>
     <div>
@@ -39,14 +45,8 @@
                          from="{{loggedUser.firstName}} {{loggedUser.lastName.substring(0, 1)}}"
                          text="cardToSend.text" id="kudos" editable="true" bg="{{kudoBgId}}"
                          anonymous="cardToSend.anonymous"></kudo-editor>
-            <span class="kudoModalCheckbox">
-				<span class="checkboxLike" ng-init="cardToSend.anonymous = false" ng-click="cardToSend.anonymous = !cardToSend.anonymous"
-                      ng-class="{'checked' : cardToSend.anonymous}" ng-mouseup="loosefocus($event)"
-                      ng-click="cardToSend.anonymous != cardToSend.anonymous">
-				</span>
-            </span>
         </div>
-        <div style="position: relative; text-align: center; margin-top: 10px;">
+        <div style="position: relative; text-align: center;">
             <div class="kudo-cards-templates">
                 <div class="kudo-template" ng-repeat="bg in [1, 2, 3, 4, 5, 6]">
                     <button class="bcg-select-btn" ng-click="selectBgId(bg)">
