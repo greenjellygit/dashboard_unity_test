@@ -1,0 +1,21 @@
+<div id="kudoContainer" class="kudoCard-container" ng-style="{'background-image': 'url(' + backgroundUrl + ')', 'font-size': kudoFontSize}">
+    <div style="height: 7.7%;"></div>
+    <div style="height: 35.9%;">
+        <img ng-hide="isAnonymous" class="img-circle" style="float: left; height: 95%; width: inherit; margin-left: 1%;" ng-src="{{senderPhoto}}">
+        <img ng-show="isAnonymous" class="img-circle" style="float: left; height: 95%; width: inherit; margin-left: 1%;" ng-src="./images/photo_anonymouse.png">
+        <img class="img-circle" style="float: right; height: 95%; width: inherit; margin-right: 1%;" ng-src="{{receiverPhoto}}">
+    </div>
+    <div style="height: 12%; margin-left: 5%; margin-right: 5%;">
+        <div class="kudoCard-label" style="float: left;">
+            <span ng-hide="isAnonymous">{{senderName}}</span>
+            <span ng-show="isAnonymous">Anonymous</span>
+        </div>
+        <div class="kudoCard-label" style="float: right;">
+            <span>{{receiverName}}</span>
+        </div>
+    </div>
+        <textarea class="kudoCard-container-textArea" cursor-typeahead list-data="hashtags" is-editable="false" id="kudoTextArea" ng-model="messageText" ng-readonly="!isEditable" rows="4" data-ng-trim="false"></textarea>
+    <div class="col-xs-12" style="padding: 0;">
+    </div>
+    <div class="kudoCard-blocker" ng-hide="isEditable"></div>
+</div>

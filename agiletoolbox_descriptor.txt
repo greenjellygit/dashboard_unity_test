@@ -54,8 +54,8 @@
       			},
 				"secondaryActions": [],
       			"size": {
-        			"width": "550px",
-       			 	"height": "333px"
+        			"width": "650px",
+       			 	"height": "530px"
       			},
       			"hint": {
         			"value": "Feel free to use hashtags"
