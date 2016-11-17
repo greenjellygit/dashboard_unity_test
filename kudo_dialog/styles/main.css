@@ -196,13 +196,13 @@ User select list
 }
 
 .toogleBtn {
-	height: 31px;
-	width: 33px;
-	padding: 0;
-	right: 0;
-	position: absolute;
-	margin-top: -33px;
-	margin-right: 2px;
+    height: 32px;
+    width: 34px;
+    padding: 0;
+    right: 0;
+    position: absolute;
+    margin-top: -33px;
+    margin-right: 1px;
 }
 
 .usersListContainer {
