@@ -4,6 +4,8 @@
     <link rel="stylesheet" href="https://www.hipchat.com/atlassian-connect/all.css">
     <link rel="stylesheet" href="scripts/ng-scrollbars/jquery.mCustomScrollbar.min.css">
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="scripts/cursorTypeahead/cursorTypeahead.css">
+	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://www.hipchat.com/atlassian-connect/all.js"></script>
@@ -21,6 +23,9 @@
 
     <script src="scripts/kudoCardEditor/kudoCardEditor.controller.js"></script>
     <script src="scripts/kudoCardEditor/kudoCardEditor.directive.js"></script>
+	
+    <script src="scripts/cursorTypeahead/cursorTypeahead.controller.js"></script>
+    <script src="scripts/cursorTypeahead/cursorTypeahead.directive.js"></script>
 
     <script src="scripts/angular-gravatar-image.js"></script>
 </head>
@@ -46,7 +51,7 @@
                          text="cardToSend.text" id="kudos" editable="true" bg="{{kudoBgId}}"
                          anonymous="cardToSend.anonymous"></kudo-editor>
         </div>
-        <div style="position: relative; text-align: center; margin-top: 7px; user-select: none;">
+        <div style="text-align: center; margin-top: 7px; user-select: none;">
             <div class="kudo-cards-templates">
                 <div class="kudo-template" ng-repeat="bg in [1, 2, 3, 4, 5, 6]">
                     <button class="bcg-select-btn" ng-click="selectBgId(bg)">

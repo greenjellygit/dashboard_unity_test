@@ -32,6 +32,10 @@ angular.module("kudoAddon").directive("kudoEditor", function ($window) {
                     scope.messageText = oldVal;
                 }
             });
+			
+			            scope.$watch(function(){return scope.kudoTextArea.value;}, function(newVal) {
+                scope.messageText = newVal;
+            });
 
             scope.$watch("backgroundFileName", function(newVal) {
                 if(newVal) {

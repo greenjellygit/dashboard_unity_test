@@ -5,8 +5,9 @@ angular.module("kudoAddon").controller("KudoCardEditorController", function($sco
     $scope.backgroundDirectory = "./images/kudoCards/";
 
        // CompanyAdministrationService.getActiveCompanyHashtags().then(function(data) {
-            $scope.hashtags = [{a: 1}];
+           // $scope.hashtags = [{a: 1}];
         //});
+		$scope.hashtags = [{text: "#teeest", order: 1}, {text: "#razdwatrzy", order: 2}, {text: "#commitment", order: 3}, {text: "#angularjs123", order: 4}];
 
     $scope.reloadImage = function(url) {
         var deferred = $q.defer();

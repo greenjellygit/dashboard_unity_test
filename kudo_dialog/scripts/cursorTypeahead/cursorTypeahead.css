@@ -1,0 +1,14 @@
+.typeahead-listElem {
+    padding: 4px;
+    color: #81809e;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.typeahead-listElem-even {
+    background-color: #e2e1e1;
+}
+
+.typeahead-listElem-odd {
+    background-color: #f1f1f1;
+}

@@ -1,0 +1,10 @@
+<div id="outerDiv" style="position: relative; margin: auto;">
+    <div id="typeaheadDiv" ng-show="isVisible" ng-style="{'left': elemPosition.x, 'top': elemPosition.y}" style="position: absolute; box-shadow: 6px 6px 0px 0px rgba(0, 0, 0, 0.2); font-family: Lobster; background-color: aliceblue; cursor: hand; color: #73a7db; list-style: none outside none; text-align: left;">
+        <li data-ng-repeat="elem in sortedListData = (listData | orderBy: 'order')" ng-mouseover="selectedIndex.value = $index" class="typeahead-listElem" ng-class="{'typeahead-listElem-even' : $even, 'typeahead-listElem-odd' : $odd}" ng-style="($index == selectedIndex.value) && {'background-color' : '#bdbdd4'}">
+            {{elem.text}}
+        </li>
+    </div>
+</div>
+<div style="position: relative">
+    <div id="fakeEditor"></div>
+</div>
