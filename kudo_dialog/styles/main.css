@@ -208,7 +208,6 @@ User select list
 .usersListContainer {
 	position: absolute;
 	width: 100%;
-	overflow: hidden;
 	z-index: 2;
 	text-align: left;
 }
