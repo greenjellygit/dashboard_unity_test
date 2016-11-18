@@ -15,11 +15,11 @@ angular.module("kudoAddon").directive("cursorTypeahead", function() {
 
                 if(scope.isVisible) {
                     scope.setListPosition();
-                    if(e.key == "ArrowUp") {
+                    if(e.which == 38) {
                         scope.onButtonUp(e);
-                    } else if (e.key == "ArrowDown") {
+                    } else if (e.which == 40) {
                         scope.onButtonDown(e);
-                    } else if (e.key == "Enter") {
+                    } else if (e.which == 13) {
                         scope.onSelect(e);
                     }
                 }
