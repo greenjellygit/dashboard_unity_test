@@ -97,7 +97,7 @@ angular.module("kudoAddon", ["ngAnimate", "ngScrollbars", "bgn.md5"])
 			} else {
 				HipChat.dialog.updatePrimaryAction({enabled: false});
 			}
-		});
+		}, true);
 
 		$scope.$watch("selectedUser", function(val) {
 			$scope.receiverPhotoUrl = getUserPhotoOrGravatar(val);
