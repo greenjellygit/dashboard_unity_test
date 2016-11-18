@@ -17,12 +17,12 @@ angular.module("kudoAddon").directive("cursorTypeahead", function() {
                     scope.setListPosition();
                     if(e.which == 38) {
                         scope.onButtonUp(e);
-						scope.$apply();
                     } else if (e.which == 40) {
                         scope.onButtonDown(e);
                     } else if (e.which == 13) {
                         scope.onSelect(e);
                     }
+					scope.$apply();
                 }
             });
 
