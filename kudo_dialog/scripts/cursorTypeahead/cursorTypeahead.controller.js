@@ -126,7 +126,6 @@ angular.module("kudoAddon").controller("CursorTypeaheadController", function($sc
 			if($scope.cursorPos.start.isBetween(tags[i].from, tags[i].to)) {
 				$scope.editedTag = tags[i];
 				$scope.isVisible = true;
-				$scope.$apply();
 			}
 		}
 
@@ -146,7 +145,7 @@ angular.module("kudoAddon").controller("CursorTypeaheadController", function($sc
 		var tagElem = $scope.fakeEditorElem.find("#editedHashtag");
 		var marginLeft = parseInt($scope.fakeEditorElem.css('margin-left').replace("px", ""));
 		$scope.elemPosition.x = tagElem.position().left - $scope.editorElem[0].scrollLeft + marginLeft;
-		$scope.elemPosition.y = tagElem.position().top + tagElem.height() - $scope.editorElem[0].scrollTop + 5;
+		$scope.elemPosition.y = tagElem.position().top - $scope.typeaheadElem.height() - $scope.editorElem[0].scrollTop - 2;
 		$scope.$apply();
 	}
 
