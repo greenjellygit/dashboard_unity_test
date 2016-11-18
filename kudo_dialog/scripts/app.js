@@ -85,6 +85,16 @@ angular.module("kudoAddon", ["ngAnimate", "ngScrollbars", "bgn.md5"])
 				id : undefined
 			}
 		};
+		
+		$scope.buttonClicked = function(event, closeDialog) {
+			if (event.action === "dialog.yes") {
+				alert("hejka!");
+				//closeDialog(true);
+			}
+		}
+		HipChat.register({
+		  "dialog-button-click": $scope.buttonClicked
+		});
 
 		$scope.selectBgId = function (bg) {
 			$scope.kudoBgId = bg;
