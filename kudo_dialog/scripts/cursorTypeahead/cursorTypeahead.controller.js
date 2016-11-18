@@ -126,6 +126,7 @@ angular.module("kudoAddon").controller("CursorTypeaheadController", function($sc
 			if($scope.cursorPos.start.isBetween(tags[i].from, tags[i].to)) {
 				$scope.editedTag = tags[i];
 				$scope.isVisible = true;
+				$scope.$apply();
 			}
 		}
 
