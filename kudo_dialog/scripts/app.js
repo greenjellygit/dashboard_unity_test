@@ -58,7 +58,7 @@ angular.module("kudoAddon", ["ngAnimate", "ngScrollbars", "bgn.md5"])
 	})
 	.controller("KudoDialogController", function($rootScope, $scope, KudoDialogService, md5) {
 		$scope.kudoBgId = 1;
-		$scope.cardToSend = {text: "", anonymous: ""};
+		//$scope.cardToSend = {text: "", anonymous: ""};
 		$scope.selectedUser = {};
 		$scope.loggedUser = {};
 		$scope.currentUserId = -1;
@@ -71,17 +71,42 @@ angular.module("kudoAddon", ["ngAnimate", "ngScrollbars", "bgn.md5"])
 			$scope.loggedUser = findLoggedUserFromUsers(data, $rootScope.loggedUser);
 			$scope.currentUserId = $scope.loggedUser.id;
 		});
+		
+		$scope.cardToSend = {
+			text : "",
+			anonymous : false,
+			kudoCardTemplate : {
+				id : 1
+			},
+			fromUser : {
+				id : undefined
+			},
+			toUser : {
+				id : undefined
+			}
+		};
 
 		$scope.selectBgId = function (bg) {
 			$scope.kudoBgId = bg;
+			$scope.cardToSend.kudoCardTemplate.id = bg;
 		}
+		
+		$scope.$watch("cardToSend", function(card) {
+			if(card.text.length > 1 && card.kudoCardTemplate.id) {
+				HipChat.dialog.updatePrimaryAction({enabled: true});
+			} else {
+				HipChat.dialog.updatePrimaryAction({enabled: false});
+			}
+		});
 
 		$scope.$watch("selectedUser", function(val) {
 			$scope.receiverPhotoUrl = getUserPhotoOrGravatar(val);
+			$scope.cardToSend.toUser.id = val.id;
 		});
 
 		$scope.$watch("loggedUser", function(val) {
 			$scope.senderPhotoUrl = getUserPhotoOrGravatar(val);
+			$scope.cardToSend.fromUser.id = val.id;
 		});
 
 		function findLoggedUserFromUsers(usersList, user) {
