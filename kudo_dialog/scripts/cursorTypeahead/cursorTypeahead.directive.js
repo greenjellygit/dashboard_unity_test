@@ -22,8 +22,8 @@ angular.module("kudoAddon").directive("cursorTypeahead", function() {
                     } else if (e.which == 13) {
                         scope.onSelect(e);
                     }
-					scope.$apply();
                 }
+				scope.$apply();
             });
 
             scope.editorElem.on("blur", function() {
