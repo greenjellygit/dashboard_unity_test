@@ -7,7 +7,10 @@ angular.module("kudoAddon", ["ngAnimate", "ngScrollbars", "bgn.md5"])
 
 		$rootScope.isLoading = false;
 		$rootScope.isAuthorized = false;
-		ConfigurationService.isAuthorized();
+		
+		ConfigurationService.isAuthorized().then(function(response) {
+			$rootScope.accessToken = response.data;
+		});
 
 		function findUrlParam(name) {
 			var url = window.location;
@@ -58,7 +61,6 @@ angular.module("kudoAddon", ["ngAnimate", "ngScrollbars", "bgn.md5"])
 	})
 	.controller("KudoDialogController", function($rootScope, $scope, KudoDialogService, md5) {
 		$scope.kudoBgId = 1;
-		//$scope.cardToSend = {text: "", anonymous: ""};
 		$scope.selectedUser = {};
 		$scope.loggedUser = {};
 		$scope.currentUserId = -1;
@@ -88,7 +90,10 @@ angular.module("kudoAddon", ["ngAnimate", "ngScrollbars", "bgn.md5"])
 		
 		$scope.buttonClicked = function(event, closeDialog) {
 			if (event.action === "dialog.yes") {
-				alert("hejka!");
+				KudoDialogService.sendCard().then(function(reponse) {
+					var kudoId = response.data;
+					alert(kudoId);
+				});
 				//closeDialog(true);
 			}
 		}
@@ -161,17 +166,23 @@ angular.module("kudoAddon", ["ngAnimate", "ngScrollbars", "bgn.md5"])
 			},
 			isAuthorized: function() {
 				LoadingSpinnerService.startLoading();
-				$http.get(contexPath + "/isInstallationAuthorized/" + $rootScope.oauthId)
+				return $http.get(contexPath + "/isInstallationAuthorized/" + $rootScope.oauthId)
 					.success(function(data){
 						$rootScope.isAuthorized = data;
 					}).finally(function() {
-					LoadingSpinnerService.finishLoading();
-				});
+						LoadingSpinnerService.finishLoading();
+					});
 			}
 		}
 	})
 	.factory("KudoDialogService", function($rootScope, $http, LoadingSpinnerService) {
 		return {
+			getAccessToken: function() {
+				return $http.get(contexPath + "/accessToken/" + $rootScope.oauthId)
+				.success(function(data) {
+					$rootScope.accessToken = data;
+				});
+			},
 			getCompanyUsers: function() {
 				return $http.get(contexPath + "/companyUsers/" + $rootScope.oauthId);
 			},
@@ -183,7 +194,38 @@ angular.module("kudoAddon", ["ngAnimate", "ngScrollbars", "bgn.md5"])
 					}).finally(function() {
 					LoadingSpinnerService.finishLoading();
 				});
-			}
+			},
+			sendCard: function(card) {
+				LoadingSpinnerService.startLoading();
+				return $http.get(contexPath + "/sendCard/" + $rootScope.oauthId, card)
+				.finally(function() {
+					LoadingSpinnerService.finishLoading();
+				});
+			},
+			sendNotification: function(card) {
+				var notification = {
+				  "style": "media",
+				  "id": "6492f0a6-9fa0-48cd-a3dc-2b19a0036e99",
+				  "url": "https://s3.amazonaws.com/uploads.hipchat.com/6/26/z6i8a5djb9mvq7m/bonochat.png",
+				  "title": "Sample media card. Click me.",
+				  "description": {
+					"value": "Click on the title to open the image in the HipChat App",
+					"format": "text"
+				  },
+				  "thumbnail": {
+					"url": "https://s3.amazonaws.com/uploads.hipchat.com/6/26/z6i8a5djb9mvq7m/bonochat.png",
+					"url@2x": "https://s3.amazonaws.com/uploads.hipchat.com/6/26/z6i8a5djb9mvq7m/bonochat.png",
+					"width": 3313,
+					"height": 577
+				  }
+				};
+				$http.post(contexPath + "/sendCard/" + $rootScope.oauthId, card, {
+					headers: {
+						"Content-Type": "application/json"
+					}
+				});
+			},
+			
 		}
 	})
 	.factory("LoadingSpinnerService", function($rootScope, $timeout) {
