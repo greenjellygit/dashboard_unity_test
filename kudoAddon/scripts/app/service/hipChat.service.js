@@ -44,7 +44,9 @@ angular.module("kudoAddon.config").factory("HipChatService", function($q) {
             HipChat.dialog.close();
         },
         registerButton: function(btnKey, callback) {
-            HipChat.register({btnKey: callback});
+			var obj = {};
+			obj[btnKey] = callback;
+            HipChat.register(obj);
         }
     }
 });
