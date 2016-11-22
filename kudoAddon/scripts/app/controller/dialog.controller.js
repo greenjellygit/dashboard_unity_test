@@ -1,4 +1,7 @@
-angular.module("kudoAddon.dialog").controller("DialogController", function($rootScope, $scope, KudoAddonService, HipChatService) {
+var ang;
+angular.module("kudoAddon.dialog").controller("DialogController", function($q, $rootScope, $scope, KudoAddonService, HipChatService) {
+	ang = $scope;
+	
     $scope.kudoBgId = 1;
     $scope.selectedUser = {};
     $scope.loggedUser = {};
@@ -6,6 +9,14 @@ angular.module("kudoAddon.dialog").controller("DialogController", function($root
 
     $scope.senderPhotoUrl = "";
     $scope.receiverPhotoUrl = "";
+	
+	$scope.getUser = function() {
+		var deferred = $q.defer();
+		HipChat.user.getCurrentUser(function(err, success) {
+			deferred.resolve(success);
+		});
+		deferred.promise;
+	}
 
     KudoAddonService.getCompanyUsers().success(function(users) {
         $scope.users = users;
