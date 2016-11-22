@@ -15,7 +15,7 @@ angular.module("kudoAddon.dialog").controller("DialogController", function($q, $
 		HipChat.user.getCurrentUser(function(err, success) {
 			deferred.resolve(success);
 		});
-		deferred.promise;
+		return deferred.promise;
 	}
 
     KudoAddonService.getCompanyUsers().success(function(users) {
