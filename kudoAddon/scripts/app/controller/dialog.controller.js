@@ -11,11 +11,7 @@ angular.module("kudoAddon.dialog").controller("DialogController", function($q, $
     $scope.receiverPhotoUrl = "";
 	
 	$scope.getUser = function() {
-		var deferred = $q.defer();
-		HipChat.user.getCurrentUser(function(err, success) {
-			deferred.resolve(success);
-		});
-		return deferred.promise;
+		return HipChatService.getOauthId();
 	}
 
     KudoAddonService.getCompanyUsers().success(function(users) {
