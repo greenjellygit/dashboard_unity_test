@@ -36,7 +36,7 @@ angular.module("kudoAddon.dialog").controller("DialogController", function($q, $
         }
     };
 
-    HipChatService.registerButton("dialog-button-click", alert("test"));
+    HipChatService.registerButton("dialog-button-click", function() {alert("test1");});
 
     $scope.selectBgId = function (bg) {
         $scope.kudoBgId = bg;
