@@ -20,7 +20,7 @@
       "uninstalledUrl": "http://mockbin.org/bin/e92ec3a1-160f-469a-b2a2-5d38d324a0f4"
     },
 	"configurable": {
-    	"url": "https://greenjelly.ml/kudo_dialog/configuration.html"
+    	"url": "https://greenjelly.ml/kudoAddon/configuration.html"
 	},
 	"oauth2Provider": {
     	"authorizationUrl": "https://www.hipchat.com/users/authorize",
@@ -42,7 +42,7 @@
     		"title": {
       			"value": "Kudo creator"
     		},
-    		"url": "https://greenjelly.ml/kudo_dialog/kudo_dialog.html",
+    		"url": "https://greenjelly.ml/kudoAddon/kudoCreator.html",
 			"options": {
       			"style": "normal",
       			"primaryAction": {
