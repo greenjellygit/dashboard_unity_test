@@ -17,27 +17,27 @@ angular.module("kudoAddon.config").factory("HipChatService", function() {
 
     return {
         getOauthId: function() {
-            //return parseJwt(findUrlParam("signed_request")).iss;
-            return "4ea64aa4-b1da-4678-a872-f982af9b3a31";
+            return parseJwt(findUrlParam("signed_request")).iss;
+            //return "4ea64aa4-b1da-4678-a872-f982af9b3a31";
         },
         getLoggedUser: function() {
-            //return HipChat.user.getCurrentUser(function(err, success) {});
-            return {name: "Krzysztof Antczak", email: "a.krzychu@gmail.com"};
+            return HipChat.user.getCurrentUser(function(err, success) {});
+            //return {name: "Krzysztof Antczak", email: "a.krzychu@gmail.com"};
         },
         enablePrimaryButton: function() {
-            //HipChat.dialog.updatePrimaryAction({enabled: true});
+            HipChat.dialog.updatePrimaryAction({enabled: true});
         },
         disablePrimaryButton: function() {
-            //HipChat.dialog.updatePrimaryAction({enabled: false});
+            HipChat.dialog.updatePrimaryAction({enabled: false});
         },
         sendCardNotification: function() {
 
         },
         closeDialog: function() {
-            //HipChat.dialog.close();
+            HipChat.dialog.close();
         },
         registerButton: function(btnKey, callback) {
-            //HipChat.register({btnKey: callback});
+            HipChat.register({btnKey: callback});
         }
     }
 });
