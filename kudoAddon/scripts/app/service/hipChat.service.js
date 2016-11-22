@@ -21,15 +21,15 @@ angular.module("kudoAddon.config").factory("HipChatService", function($q) {
             //return "4ea64aa4-b1da-4678-a872-f982af9b3a31";
         },
         getLoggedUser: function() {
-			var deferred = $q.defer();
-			HipChat.user.getCurrentUser(function(err, success) {
-				deferred.resolve(success);
-			});
-			return deferred.promise;
-			
 			//var deferred = $q.defer();
-			//deferred.resolve({name: "Krzysztof Antczak", email: "a.krzychu@gmail.com"});
+			//HipChat.user.getCurrentUser(function(err, success) {
+				//deferred.resolve(success);
+			//});
 			//return deferred.promise;
+			
+			var deferred = $q.defer();
+			deferred.resolve({name: "Krzysztof Antczak", email: "a.krzychu@gmail.com"});
+			return deferred.promise;
         },
         enablePrimaryButton: function() {
             HipChat.dialog.updatePrimaryAction({enabled: true});
