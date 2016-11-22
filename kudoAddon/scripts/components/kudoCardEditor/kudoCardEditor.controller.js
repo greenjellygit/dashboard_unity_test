@@ -1,13 +1,12 @@
 "use strict";
-
-angular.module("kudoAddon").controller("KudoCardEditorController", function($scope, $q, $http) {
+angular.module("kudoAddon.dialog").controller("KudoCardEditorController", function($scope, $q, $http, KudoAddonService) {
 
     $scope.backgroundDirectory = "./images/kudoCards/";
 
-       // CompanyAdministrationService.getActiveCompanyHashtags().then(function(data) {
-           // $scope.hashtags = [{a: 1}];
-        //});
-		$scope.hashtags = [{text: "#teeest", order: 1}, {text: "#razdwatrzy", order: 2}, {text: "#commitment", order: 3}, {text: "#angularjs123", order: 4}];
+    KudoAddonService.getCompanyHashtags().success(function(data) {
+        $scope.hashtags = data;
+    });
+    $scope.hashtags = [{text: "#teeest", order: 1}, {text: "#razdwatrzy", order: 2}, {text: "#commitment", order: 3}, {text: "#angularjs123", order: 4}];
 
     $scope.reloadImage = function(url) {
         var deferred = $q.defer();

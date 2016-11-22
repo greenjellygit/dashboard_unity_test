@@ -24,6 +24,7 @@ body {
 	height: initial;
 	color: white;
 	overflow: hidden;
+	font-family: Arial;
 }
 
 .logo {
@@ -115,7 +116,7 @@ a {
 	position: absolute;
 	text-align: center;
 	width: 100%;
-	height: 400px;
+	height: 500px;
 	background-color: #4AA3DF;
 	top: 0;
 }
@@ -196,13 +197,13 @@ User select list
 }
 
 .toogleBtn {
-    height: 32px;
-    width: 34px;
-    padding: 0;
-    right: 0;
-    position: absolute;
-    margin-top: -33px;
-    margin-right: 1px;
+	height: 32px;
+	width: 34px;
+	padding: 0;
+	right: 0;
+	position: absolute;
+	margin-top: -33px;
+	margin-right: 1px;
 }
 
 .usersListContainer {

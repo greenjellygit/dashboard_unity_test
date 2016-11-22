@@ -7,7 +7,7 @@ angular.module("kudoAddon", ["ngAnimate", "ngScrollbars", "bgn.md5"])
 
 		$rootScope.isLoading = false;
 		$rootScope.isAuthorized = false;
-		
+
 		ConfigurationService.isAuthorized().then(function(response) {
 			$rootScope.accessToken = response.data;
 		});
@@ -73,7 +73,7 @@ angular.module("kudoAddon", ["ngAnimate", "ngScrollbars", "bgn.md5"])
 			$scope.loggedUser = findLoggedUserFromUsers(data, $rootScope.loggedUser);
 			$scope.currentUserId = $scope.loggedUser.id;
 		});
-		
+
 		$scope.cardToSend = {
 			text : "",
 			anonymous : false,
@@ -87,7 +87,7 @@ angular.module("kudoAddon", ["ngAnimate", "ngScrollbars", "bgn.md5"])
 				id : undefined
 			}
 		};
-		
+
 		$scope.buttonClicked = function(event, closeDialog) {
 			if (event.action === "dialog.yes") {
 				KudoDialogService.sendCard().then(function(reponse) {
@@ -98,14 +98,14 @@ angular.module("kudoAddon", ["ngAnimate", "ngScrollbars", "bgn.md5"])
 			}
 		}
 		HipChat.register({
-		  "dialog-button-click": $scope.buttonClicked
+			"dialog-button-click": $scope.buttonClicked
 		});
 
 		$scope.selectBgId = function (bg) {
 			$scope.kudoBgId = bg;
 			$scope.cardToSend.kudoCardTemplate.id = bg;
 		}
-		
+
 		$scope.$watch("cardToSend", function(card) {
 			if(card.text.length > 1 && card.kudoCardTemplate.id) {
 				HipChat.dialog.updatePrimaryAction({enabled: true});
@@ -179,9 +179,9 @@ angular.module("kudoAddon", ["ngAnimate", "ngScrollbars", "bgn.md5"])
 		return {
 			getAccessToken: function() {
 				return $http.get(contexPath + "/accessToken/" + $rootScope.oauthId)
-				.success(function(data) {
-					$rootScope.accessToken = data;
-				});
+					.success(function(data) {
+						$rootScope.accessToken = data;
+					});
 			},
 			getCompanyUsers: function() {
 				return $http.get(contexPath + "/companyUsers/" + $rootScope.oauthId);
@@ -198,26 +198,26 @@ angular.module("kudoAddon", ["ngAnimate", "ngScrollbars", "bgn.md5"])
 			sendCard: function(card) {
 				LoadingSpinnerService.startLoading();
 				return $http.get(contexPath + "/sendCard/" + $rootScope.oauthId, card)
-				.finally(function() {
-					LoadingSpinnerService.finishLoading();
-				});
+					.finally(function() {
+						LoadingSpinnerService.finishLoading();
+					});
 			},
 			sendNotification: function(card) {
 				var notification = {
-				  "style": "media",
-				  "id": "6492f0a6-9fa0-48cd-a3dc-2b19a0036e99",
-				  "url": "https://s3.amazonaws.com/uploads.hipchat.com/6/26/z6i8a5djb9mvq7m/bonochat.png",
-				  "title": "Sample media card. Click me.",
-				  "description": {
-					"value": "Click on the title to open the image in the HipChat App",
-					"format": "text"
-				  },
-				  "thumbnail": {
+					"style": "media",
+					"id": "6492f0a6-9fa0-48cd-a3dc-2b19a0036e99",
 					"url": "https://s3.amazonaws.com/uploads.hipchat.com/6/26/z6i8a5djb9mvq7m/bonochat.png",
-					"url@2x": "https://s3.amazonaws.com/uploads.hipchat.com/6/26/z6i8a5djb9mvq7m/bonochat.png",
-					"width": 3313,
-					"height": 577
-				  }
+					"title": "Sample media card. Click me.",
+					"description": {
+						"value": "Click on the title to open the image in the HipChat App",
+						"format": "text"
+					},
+					"thumbnail": {
+						"url": "https://s3.amazonaws.com/uploads.hipchat.com/6/26/z6i8a5djb9mvq7m/bonochat.png",
+						"url@2x": "https://s3.amazonaws.com/uploads.hipchat.com/6/26/z6i8a5djb9mvq7m/bonochat.png",
+						"width": 3313,
+						"height": 577
+					}
 				};
 				$http.post(contexPath + "/sendCard/" + $rootScope.oauthId, card, {
 					headers: {
@@ -225,33 +225,33 @@ angular.module("kudoAddon", ["ngAnimate", "ngScrollbars", "bgn.md5"])
 					}
 				});
 			},
-			
+
 		}
 	})
 	.factory("LoadingSpinnerService", function($rootScope, $timeout) {
-	var isLoadingInProggres = false;
+		var isLoadingInProggres = false;
 
-	var processLoading = function() {
-		$rootScope.isLoading = true;
-		$timeout(function () {
-			if(isLoadingInProggres) {
-				processLoading();
-			} else {
-				$rootScope.isLoading = false;
-			}
-		}, 2000);
-	}
-
-	return {
-		startLoading: function() {
-			isLoadingInProggres = true;
-			//processLoading();
-		},
-		finishLoading: function() {
-			isLoadingInProggres = false;
+		var processLoading = function() {
+			$rootScope.isLoading = true;
+			$timeout(function () {
+				if(isLoadingInProggres) {
+					processLoading();
+				} else {
+					$rootScope.isLoading = false;
+				}
+			}, 2000);
 		}
-	}
-});
+
+		return {
+			startLoading: function() {
+				isLoadingInProggres = true;
+				//processLoading();
+			},
+			finishLoading: function() {
+				isLoadingInProggres = false;
+			}
+		}
+	});
 
 var contexPath = "http://localhost:8080/ATB/api/integration/hipchat";
 

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module("kudoAddon").controller("CursorTypeaheadController", function($scope, $compile, $timeout) {
+angular.module("kudoAddon.dialog").controller("CursorTypeaheadController", function($scope, $compile, $timeout) {
 	$scope.isVisible = false;
 	$scope.elemPosition = {x : 0, y : 0};
 	$scope.selectedIndex = {value : 0};

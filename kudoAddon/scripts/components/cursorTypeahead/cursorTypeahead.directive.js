@@ -1,4 +1,4 @@
-angular.module("kudoAddon").directive("cursorTypeahead", function() {
+angular.module("kudoAddon.dialog").directive("cursorTypeahead", function() {
     return {
         restrict: "A",
         scope: {
@@ -36,6 +36,6 @@ angular.module("kudoAddon").directive("cursorTypeahead", function() {
             });
         },
         controller: "CursorTypeaheadController",
-        templateUrl: "scripts/cursorTypeahead/cursorTypeahead.directive.html?1.2"
+        templateUrl: "scripts/components/cursorTypeahead/cursorTypeahead.directive.html"
     }
 });

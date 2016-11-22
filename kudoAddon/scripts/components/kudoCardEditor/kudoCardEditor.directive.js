@@ -1,6 +1,6 @@
 "use strict";
 
-angular.module("kudoAddon").directive("kudoEditor", function ($window) {
+angular.module("kudoAddon.dialog").directive("kudoEditor", function ($window) {
 	return {
         restrict: "E",
         scope: {
@@ -32,15 +32,15 @@ angular.module("kudoAddon").directive("kudoEditor", function ($window) {
                     scope.messageText = oldVal;
                 }
             });
-			
-			            scope.$watch(function(){return scope.kudoTextArea.value;}, function(newVal) {
-                scope.messageText = newVal;
-            });
 
             scope.$watch("backgroundFileName", function(newVal) {
                 if(newVal) {
                     scope.backgroundUrl = scope.backgroundDirectory + "kudo" + newVal + ".png";
                 }
+            });
+
+            scope.$watch(function(){return scope.kudoTextArea.value;}, function(newVal) {
+                scope.messageText = newVal;
             });
 
             scope.$watch("senderPhotoUrl", function(url) {
