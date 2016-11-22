@@ -9,8 +9,12 @@ angular.module("kudoAddon.dialog").controller("DialogController", function($q, $
 
     $scope.senderPhotoUrl = "";
     $scope.receiverPhotoUrl = "";
-
+	
+	$scope.getUser = function() {
 	HipChatService.getLoggedUser().then(function(data) {console.log(data)});
+	}
+	
+	
 
     KudoAddonService.getCompanyUsers().success(function(users) {
         $scope.users = users;
