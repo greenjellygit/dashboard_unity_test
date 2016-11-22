@@ -10,31 +10,20 @@ angular.module("kudoAddon.dialog").controller("DialogController", function($q, $
     $scope.senderPhotoUrl = "";
     $scope.receiverPhotoUrl = "";
 	
-	$scope.getUser = function() {
-	HipChatService.getLoggedUser().then(function(data) {console.log(data)});
-	}
+	ang = HipChatService;
 	
-	
-
-    KudoAddonService.getCompanyUsers().success(function(users) {
-        $scope.users = users;
-        var loggedHipChatUser = HipChatService.getLoggedUser();
-        $scope.loggedUser = findLoggedUserFromUsers(users, loggedHipChatUser);
-        $scope.currentUserId = $scope.loggedUser.id;
-    });
+	HipChatService.getLoggedUser().then(function(data) {
+        var loggedHipChatUser = data;
+		
+		KudoAddonService.getCompanyUsers().success(function(users) {
+			$scope.users = users;
+			$scope.loggedUser = findLoggedUserFromUsers(users, loggedHipChatUser);
+			$scope.currentUserId = $scope.loggedUser.id;
+		});
+	});
 
     $scope.cardToSend = {
-        text : "",
-        anonymous : false,
-        kudoCardTemplate : {
-            id : 1
-        },
-        fromUser : {
-            id : undefined
-        },
-        toUser : {
-            id : undefined
-        }
+        text : "", anonymous : false, kudoCardTemplate : {id : 1}, fromUser : {id : undefined}, toUser : {id : undefined}
     };
 
     $scope.buttonClicked = function(event) {
