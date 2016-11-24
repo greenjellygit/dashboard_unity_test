@@ -17,36 +17,33 @@ angular.module("kudoAddon.config").factory("HipChatService", function($q) {
 
     return {
         getOauthId: function() {
-            return parseJwt(findUrlParam("signed_request")).iss;
-            //return "4ea64aa4-b1da-4678-a872-f982af9b3a31";
+            //return parseJwt(findUrlParam("signed_request")).iss;
+            return "4ea64aa4-b1da-4678-a872-f982af9b3a31";
         },
         getLoggedUser: function() {
-			var deferred = $q.defer();
-			HipChat.user.getCurrentUser(function(err, success) {
-				deferred.resolve(success);
-			});
-			return deferred.promise;
-			
 			//var deferred = $q.defer();
-			//deferred.resolve({name: "Krzysztof Antczak", email: "a.krzychu@gmail.com"});
+			//HipChat.user.getCurrentUser(function(err, success) {
+				//deferred.resolve(success);
+			//});
 			//return deferred.promise;
+			
+			var deferred = $q.defer();
+			deferred.resolve({name: "Krzysztof Antczak", email: "a.krzychu@gmail.com"});
+			return deferred.promise;
         },
         enablePrimaryButton: function() {
-            HipChat.dialog.updatePrimaryAction({enabled: true});
+            //HipChat.dialog.updatePrimaryAction({enabled: true});
         },
         disablePrimaryButton: function() {
-            HipChat.dialog.updatePrimaryAction({enabled: false});
-        },
-        sendCardNotification: function() {
-
+            //HipChat.dialog.updatePrimaryAction({enabled: false});
         },
         closeDialog: function() {
-            HipChat.dialog.close();
+            //HipChat.dialog.close();
         },
-        registerButton: function(btnKey, callback) {
-			var obj = {};
-			obj[btnKey] = callback;
-            HipChat.register(obj);
+        registerButtonCallback: function(btnKey, callback) {
+			//var obj = {};
+			//obj[btnKey] = callback;
+            //HipChat.register(obj);
         }
     }
 });

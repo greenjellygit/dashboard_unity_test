@@ -17,11 +17,11 @@
 	"installable": {
       "allowGlobal": true, 
       "allowRoom": true, 
-      "callbackUrl": "http://mockbin.org/bin/e92ec3a1-160f-469a-b2a2-5d38d324a0f4",
-      "uninstalledUrl": "http://mockbin.org/bin/e92ec3a1-160f-469a-b2a2-5d38d324a0f4"
+      "callbackUrl": "https://atb.isolution.pl/kudoAddon/configuration/register",
+      "uninstalledUrl": "https://atb.isolution.pl/kudoAddon/configuration/unregister"
     },
 	"configurable": {
-    	"url": "https://greenjelly.ml/kudoAddon/configuration.html"
+    	"url": "https://atb.isolution.pl/kudoAddon/configuration.html"
 	},
 	"oauth2Provider": {
     	"authorizationUrl": "https://www.hipchat.com/users/authorize",
@@ -43,7 +43,7 @@
     		"title": {
       			"value": "Kudo creator"
     		},
-    		"url": "https://greenjelly.ml/kudoAddon/kudoCreator.html",
+    		"url": "https://atb.isolution.pl/kudoAddon/kudoCreator.html",
 			"options": {
       			"style": "normal",
       			"primaryAction": {

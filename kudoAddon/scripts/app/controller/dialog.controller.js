@@ -29,14 +29,12 @@ angular.module("kudoAddon.dialog").controller("DialogController", function($q, $
     $scope.buttonClicked = function(event) {
         if (event.action === "dialog.yes") {
             KudoAddonService.sendKudo($scope.cardToSend).then(function(response) {
-                $scope.cardToSend.id = response.data;
-                HipChatService.sendCardNotification($scope.cardToSend);
                 HipChatService.closeDialog();
             });
         }
     };
 
-    HipChatService.registerButton("dialog-button-click", function() {alert("test1");});
+    HipChatService.registerButtonCallback("dialog-button-click", $scope.buttonClicked);
 
     $scope.selectBgId = function (bg) {
         $scope.kudoBgId = bg;
