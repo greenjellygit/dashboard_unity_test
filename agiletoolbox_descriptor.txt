@@ -17,7 +17,7 @@
 	"installable": {
       "allowGlobal": true, 
       "allowRoom": true, 
-      "callbackUrl": "https://atb.isolution.pl/kudoAddon/configuration/register",
+      "callbackUrl": "https://mockbin.org/bin/d2635ef6-a64f-4cb0-bf7c-6cf7aeffd800/test",
       "uninstalledUrl": "https://atb.isolution.pl/kudoAddon/configuration/unregister"
     },
 	"configurable": {
