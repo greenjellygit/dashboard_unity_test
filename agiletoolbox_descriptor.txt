@@ -12,8 +12,8 @@
         "send_notification",
 		"view_group",
 		"view_room"
-      ],
-	},
+      ]
+    },
 	"installable": {
       "allowGlobal": true, 
       "allowRoom": true, 
@@ -66,7 +66,7 @@
 	],
 	"webhook": [
     {
-      "url": "https://mockbin.org/bin/d2635ef6-a64f-4cb0-bf7c-6cf7aeffd800",
+      "url": "https://addon.example.com/echo",
       "pattern": "^/[eE][cC][hH][oO]",
       "event": "room_message",
       "authentication": "jwt",
