@@ -13,14 +13,7 @@
 		"view_group",
 		"view_room"
       ],
-	"webhook": [{
-		"event": "room_message",
-		"pattern": "^\\/hello$",
-		"url": "https://mockbin.org/bin/d2635ef6-a64f-4cb0-bf7c-6cf7aeffd800",
-		"name": "Hello webhook",
-		"authentication": "jwt"
-		}
-	]},
+	}
 	"installable": {
       "allowGlobal": true, 
       "allowRoom": true, 
@@ -70,6 +63,15 @@
       			}
     		}
   		}
-	]
+	],
+	"webhook": [
+    {
+      "url": "https://mockbin.org/bin/d2635ef6-a64f-4cb0-bf7c-6cf7aeffd800",
+      "pattern": "^/[eE][cC][hH][oO]",
+      "event": "room_message",
+      "authentication": "jwt",
+      "name": "Echo"
+    }
+  ]
   }
 }
