@@ -66,7 +66,7 @@
 	],
 	"webhook": [
     {
-      "url": "https://addon.example.com/echo",
+      "url": "https://mockbin.org/bin/d2635ef6-a64f-4cb0-bf7c-6cf7aeffd800/test",
       "pattern": "^/[eE][cC][hH][oO]",
       "event": "room_message",
       "authentication": "jwt",
