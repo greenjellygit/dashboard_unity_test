@@ -13,7 +13,7 @@
 		"view_group",
 		"view_room"
       ],
-	}
+	},
 	"installable": {
       "allowGlobal": true, 
       "allowRoom": true, 
