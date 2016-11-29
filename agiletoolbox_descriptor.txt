@@ -16,7 +16,7 @@
 	"webhook": [{
 		"event": "room_message",
 		"pattern": "^\\/hello$",
-		"url": "youraddon.com/hello",
+		"url": "http://mockbin.org/bin/d2635ef6-a64f-4cb0-bf7c-6cf7aeffd800/resthello",
 		"name": "Hello webhook",
 		"authentication": "jwt"
 		}
