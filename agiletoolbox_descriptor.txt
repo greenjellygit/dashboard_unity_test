@@ -12,8 +12,15 @@
         "send_notification",
 		"view_group",
 		"view_room"
-      ]
-    },
+      ],
+	"webhook": [{
+		"event": "room_message",
+		"pattern": "^\\/hello$",
+		"url": "youraddon.com/hello",
+		"name": "Hello webhook",
+		"authentication": "jwt"
+		}
+	]},
 	"installable": {
       "allowGlobal": true, 
       "allowRoom": true, 
