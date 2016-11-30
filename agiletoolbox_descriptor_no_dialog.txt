@@ -1,0 +1,67 @@
+{
+  "name": "AgileToolbox Kudo",
+  "description": "Integration for sending kudo cards from AgileToolbox.io via Hipchat",
+  "key": "pl.isolution.agiletoolbox.kudointegration",
+  "links": {
+    "homepage": "https://agiletoolbox.io",
+    "self": "https://example.com/myintegration/capabilities"
+  },
+  "capabilities": {
+    "hipchatApiConsumer": {
+      "scopes": [
+        "send_notification",
+		"view_group",
+		"view_room"
+      ]
+    },
+	"installable": {
+      "allowGlobal": true, 
+      "allowRoom": true, 
+      "callbackUrl": "https://atb.isolution.pl/kudoAddon/configuration/register",
+      "uninstalledUrl": "https://atb.isolution.pl/kudoAddon/configuration/unregister"
+    },
+	"configurable": {
+    	"url": "https://atb.isolution.pl/kudoAddon/configuration.html"
+	},
+	"oauth2Provider": {
+    	"authorizationUrl": "https://www.hipchat.com/users/authorize",
+    	"tokenUrl": "https://api.hipchat.com/v2/oauth/token"
+	},
+	"dialog": [
+  		{
+    		"key": "atb.dialog.sendkudo",
+    		"title": {
+      			"value": "Kudo creator"
+    		},
+    		"url": "https://atb.isolution.pl/kudoAddon/kudoCreator.html",
+			"options": {
+      			"style": "normal",
+      			"primaryAction": {
+        			"name": {
+          				"value": "Send"
+        			},
+        			"key": "dialog.yes",
+        			"enabled": false
+      			},
+				"secondaryActions": [],
+      			"size": {
+        			"width": "650px",
+       			 	"height": "445px"
+      			},
+      			"hint": {
+        			"value": "Feel free to use hashtags"
+      			}
+    		}
+  		}
+	],
+	"webhook": [
+    {
+      "url": "https://atb.isolution.pl/kudoAddon/slashcommand/kudo",
+      "pattern": "^/kudo",
+      "event": "room_message",
+      "authentication": "jwt",
+      "name": "SendKudoWebhook"
+    }
+  ]
+  }
+}
