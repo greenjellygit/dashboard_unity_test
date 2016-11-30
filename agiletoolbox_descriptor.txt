@@ -17,7 +17,7 @@
 	"installable": {
       "allowGlobal": true, 
       "allowRoom": true, 
-      "callbackUrl": "https://mockbin.org/bin/d2635ef6-a64f-4cb0-bf7c-6cf7aeffd800/test",
+      "callbackUrl": "https://atb.isolution.pl/kudoAddon/configuration/register",
       "uninstalledUrl": "https://atb.isolution.pl/kudoAddon/configuration/unregister"
     },
 	"configurable": {
@@ -66,11 +66,11 @@
 	],
 	"webhook": [
     {
-      "url": "https://mockbin.org/bin/d2635ef6-a64f-4cb0-bf7c-6cf7aeffd800/test",
-      "pattern": "^/[eE][cC][hH][oO]",
+      "url": "https://mockbin.org/bin/fee288de-469e-4123-a380-39c0a9c250a1",
+      "pattern": "^/kudo",
       "event": "room_message",
       "authentication": "jwt",
-      "name": "Echo"
+      "name": "SendKudoWebhook"
     }
   ]
   }
