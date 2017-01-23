@@ -27,6 +27,43 @@
     	"authorizationUrl": "https://www.hipchat.com/users/authorize",
     	"tokenUrl": "https://api.hipchat.com/v2/oauth/token"
 	},
+	"action": [
+  		{
+    		"key": "atb.action.sendkudo",
+    		"name": {
+      			"value": "Send Kudo"
+    		},
+    		"target": "atb.dialog.sendkudo",
+    		"location": "hipchat.input.action"
+  		}
+	],
+	"dialog": [
+  		{
+    		"key": "atb.dialog.sendkudo",
+    		"title": {
+      			"value": "Kudo creator"
+    		},
+    		"url": "https://atb.isolution.pl/atb-dev/kudoAddon/kudoCreator.html",
+			"options": {
+      			"style": "normal",
+      			"primaryAction": {
+        			"name": {
+          				"value": "Send"
+        			},
+        			"key": "dialog.yes",
+        			"enabled": false
+      			},
+				"secondaryActions": [],
+      			"size": {
+        			"width": "650px",
+       			 	"height": "445px"
+      			},
+      			"hint": {
+        			"value": "Feel free to use hashtags"
+      			}
+    		}
+  		}
+	],
 	"webhook": [
     {
       "url": "https://atb.isolution.pl/atb-dev/kudoAddon/slashcommand/kudo",
