@@ -17,11 +17,11 @@
 	"installable": {
       "allowGlobal": true, 
       "allowRoom": true, 
-      "callbackUrl": "https://requestb.in/16fs1xg1",
-      "uninstalledUrl": "https://atb.isolution.pl/atb-dev/kudoAddon/configuration/unregister"
+      "callbackUrl": "https://atb.isolution.pl/kudoAddon/configuration/register",
+      "uninstalledUrl": "https://atb.isolution.pl/kudoAddon/configuration/unregister"
     },
 	"configurable": {
-    	"url": "https://atb.isolution.pl/atb-dev/kudoAddon/configuration.html"
+    	"url": "https://atb.isolution.pl/kudoAddon/configuration.html"
 	},
 	"oauth2Provider": {
     	"authorizationUrl": "https://www.hipchat.com/users/authorize",
@@ -43,7 +43,7 @@
     		"title": {
       			"value": "Kudo creator"
     		},
-    		"url": "https://atb.isolution.pl/atb-dev/kudoAddon/kudoCreator.html",
+    		"url": "https://atb.isolution.pl/kudoAddon/kudoCreator.html",
 			"options": {
       			"style": "normal",
       			"primaryAction": {
@@ -66,7 +66,7 @@
 	],
 	"webhook": [
     {
-      "url": "https://requestb.in/16fs1xg1",
+      "url": "https://atb.isolution.pl/kudoAddon/slashcommand/kudo",
       "pattern": "^/kudo",
       "event": "room_message",
       "authentication": "jwt",
