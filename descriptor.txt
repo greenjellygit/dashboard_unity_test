@@ -29,7 +29,7 @@
 	},
 	"webhook": [
     {
-      "url": "https://teamtoolbox.io/slashcommand/kudo",
+      "url": "https://teamtoolbox.io/kudoAddon/slashcommand/kudo",
       "pattern": "^/kudo",
       "event": "room_message",
       "authentication": "jwt",
