@@ -3,8 +3,8 @@
   "description": "Integration for sending kudo cards from AgileToolbox.io via Hipchat",
   "key": "pl.isolution.agiletoolbox.kudointegration",
   "links": {
-    "homepage": "https://teamtoolbox.io",
-    "self": "https://teamtoolbox.io"
+    "homepage": "https://preprod.teamtoolbox.io",
+    "self": "https://preprod.teamtoolbox.io"
   },
   "capabilities": {
     "hipchatApiConsumer": {
@@ -17,11 +17,11 @@
 	"installable": {
       "allowGlobal": true,
       "allowRoom": true,
-      "callbackUrl": "https://teamtoolbox.io/kudoAddon/configuration/register",
-      "uninstalledUrl": "https://teamtoolbox.io/kudoAddon/configuration/unregister"
+      "callbackUrl": "https://preprod.teamtoolbox.io/kudoAddon/configuration/register",
+      "uninstalledUrl": "https://preprod.teamtoolbox.io/kudoAddon/configuration/unregister"
     },
 	"configurable": {
-    	"url": "https://teamtoolbox.io/kudoAddon/configuration.html"
+    	"url": "https://preprod.teamtoolbox.io/kudoAddon/configuration.html"
 	},
 	"oauth2Provider": {
     	"authorizationUrl": "https://www.hipchat.com/users/authorize",
@@ -29,7 +29,7 @@
 	},
 	"webhook": [
     {
-      "url": "https://teamtoolbox.io/kudoAddon/slashcommand/kudo",
+      "url": "https://preprod.teamtoolbox.io/kudoAddon/slashcommand/kudo",
       "pattern": "^/kudo",
       "event": "room_message",
       "authentication": "jwt",
